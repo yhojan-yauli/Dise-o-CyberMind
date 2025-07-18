@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="./registro.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="/">Ciberseguridad</a>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="../cursosPremium/cursos-premium.html">Cursos Premium</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="../foros/foros.html">Foros</a></li>
+                <li class="nav-item"><a class="nav-link" href="../login/login.html">Iniciar Sesión</a></li>
+                <li class="nav-item"><a class="nav-link" href="../resgistro/registro.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Registrarse</h2>
+            <form action="registro.php" method="post">
+                <label for="new-username">Usuario:</label>
+                <input type="text" id="new-username" name="new-username" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="new-password">Contraseña:</label>
+                <input type="password" id="new-password" name="new-password" required>
+
+                <label for="confirm-password">Confirmar Contraseña:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
+                <button type="submit">Registrarse</button>
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 Curso de Ciberseguridad</p>
+    </footer>
+    <script src="/js/script.js"></script>
+    <script src="./registro.js"></script>
+</body>
+
+</html>
