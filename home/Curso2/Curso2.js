@@ -126,4 +126,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const walk = (x - startX) * 2;
         moduleNav.scrollLeft = scrollLeft - walk;
     });
+
+    moduleNav.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            moduleNav.scrollLeft += e.deltaY;
+        }
+    });
+
+    const headerLinks = document.querySelectorAll('header .nav-link');
+
+    headerLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetUrl = this.href;
+
+            const confirmLeave = confirm("¿Estás seguro de salir de esta página? Perderás tu progreso actual.");
+
+            if (confirmLeave) {
+                window.location.href = targetUrl;
+            }
+        });
+    });
 });

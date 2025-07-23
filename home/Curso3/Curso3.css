@@ -2,10 +2,86 @@ body, html {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7fa;
+    background-image: url('/home/imagenes/upscalemedia-transformed.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #333;
     height: 100%;
     overflow-x: hidden;
+}
+
+header {
+    background-color: #fffefe;
+    color: #000;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-brand a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.btn-login {
+    padding: 6px 14px;
+    border: 2px solid rgba(30, 30, 30, 0.01);
+    border-radius: 6px;
+    background-color: rgba(30, 30, 30, 0.69);
+    color: #FFFFFF;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: rgba(53, 53, 53, 0.69);
+    color: white;
+}
+
+.btn-register {
+    padding: 6px 14px;
+    border: 2px solid #1E1E1E;
+    border-radius: 6px;
+    background-color: rgba(30, 30, 30, 1);
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #262626;
+    border-color: #262626;
 }
 
 .module-nav {
@@ -13,7 +89,6 @@ body, html {
     overflow-x: auto;
     white-space: nowrap;
     padding: 10px;
-    background-color: #0077b6;
     scrollbar-width: none;
     -ms-overflow-style: none;
     justify-content: flex-start;
@@ -57,11 +132,11 @@ body, html {
 }
 
 .course-content {
-    margin-top: 80px;
+    margin-top: 30px;
     padding: 20px;
     display: flex;
     justify-content: center;
-    background-color: #f4f7fa;
+    background-color: transparent; 
 }
 
 .course-module {
