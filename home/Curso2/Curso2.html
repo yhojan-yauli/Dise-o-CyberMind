@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciberseguridad para Estudiantes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Curso2.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="/">Ciberseguridad para Estudiantes: Aprende Jugando, Navega Seguro</a>
+            </div>
+        </nav>
+        <div class="module-nav">
+            <button class="nav-btn" onclick="navigateModule(1)"><i class="fas fa-check"></i> Bienvenida</button>
+            <button class="nav-btn" disabled onclick="navigateModule(2)">¿Qué es la ciberseguridad?</button>
+            <button class="nav-btn" disabled onclick="navigateModule(3)">Identifica fraudes comunes</button>
+            <button class="nav-btn" disabled onclick="navigateModule(4)">Contraseñas fuertes</button>
+            <button class="nav-btn" disabled onclick="navigateModule(5)">Phishing y mensajes falsos</button>
+            <button class="nav-btn" disabled onclick="navigateModule(6)">Phishing</button>
+            <button class="nav-btn" disabled onclick="navigateModule(7)">Protección en redes sociales</button>
+            <button class="nav-btn" disabled onclick="navigateModule(8)">Seguridad en dispositivos móviles</button>
+            <button class="nav-btn" disabled onclick="navigateModule(9)">Cómo usar Wi-Fi seguro</button>
+            <button class="nav-btn" disabled onclick="navigateModule(10)">Seguridad en el teletrabajo</button>
+            <button class="nav-btn" disabled onclick="navigateModule(11)">Impacto ambiental de la tecnología</button>
+            <button class="nav-btn" disabled onclick="navigateModule(12)">¡Felicidades!</button>
+        </div>
+    </header>
+
+    <main class="course-content">
+        <div id="module1" class="course-module">
+            <h2><i class="fas fa-home"></i> Módulo 1: Bienvenida</h2>
+            <p>¡Hola y bienvenido/a! Este curso está diseñado para estudiantes que desean adquirir conocimientos básicos de ciberseguridad sin complicaciones técnicas. A lo largo de estos 12 módulos, encontrarás una variedad de recursos, incluyendo juegos, retos y videos animados, que te ayudarán a entender cómo proteger tu información, reconocer fraudes y mantener tus cuentas seguras. ¡Disfruta aprendiendo y conviértete en un usuario digital seguro!</p>
+            <div class="quiz">
+                <h3>Cuestionario:</h3>
+                <p>¿Cuál es el objetivo principal de este curso?</p>
+                <input type="radio" id="q1a1" name="q1" value="a">
+                <label for="q1a1">Aprender a programar</label><br>
+                <input type="radio" id="q1a2" name="q1" value="b">
+                <label for="q1a2">Adquirir conocimientos básicos de ciberseguridad</label><br>
+                <input type="radio" id="q1a3" name="q1" value="c">
+                <label for="q1a3">Diseñar páginas web</label><br>
+                <button class="submit-btn" onclick="checkAnswer('q1', 'b', 1)">Enviar</button>
+                <div id="feedback1" class="feedback-panel" style="display: none;"></div>
+                <button class="next-btn" id="next1" style="display: none;" onclick="navigateModule(2)">Siguiente</button>
+            </div>
+        </div>
+
+        <div id="module2" class="course-module" style="display: none;">
+            <h2><i class="fas fa-question-circle"></i> Módulo 2: ¿Qué es la ciberseguridad?</h2>
+            <p>La ciberseguridad es el conjunto de prácticas diseñadas para proteger redes, dispositivos, programas y datos de ataques, daños o accesos no autorizados. Es fundamental para proteger la información personal y profesional en el mundo digital. En este módulo, exploraremos los conceptos básicos de la ciberseguridad, incluyendo la importancia de mantener tus dispositivos y datos seguros.</p>
+            <div class="quiz">
+                <h3>Cuestionario:</h3>
+                <p>¿Qué es la ciberseguridad?</p>
+                <input type="radio" id="q2a1" name="q2" value="a">
+                <label for="q2a1">Un tipo de software</label><br>
+                <input type="radio" id="q2a2" name="q2" value="b">
+                <label for="q2a2">La práctica de proteger redes, dispositivos y datos</label><br>
+                <input type="radio" id="q2a3" name="q2" value="c">
+                <label for="q2a3">Un juego en línea</label><br>
+                <button class="submit-btn" onclick="checkAnswer('q2', 'b', 2)">Enviar</button>
+                <div id="feedback2" class="feedback-panel" style="display: none;"></div>
+                <button class="next-btn" id="next2" style="display: none;" onclick="navigateModule(3)">Siguiente</button>
+            </div>
+        </div>
+
+        <div id="module3" class="course-module" style="display: none;">
+             <h2><i class="fas fa-exclamation-triangle"></i> Módulo 3: Identifica fraudes comunes</h2>
+             <p>En el mundo digital existen muchos tipos de fraudes: correos falsos, mensajes engañosos y páginas web fraudulentas. Estos fraudes buscan engañarte para robar tu información personal o financiera. Aprender a identificar estos fraudes es clave para mantenerte seguro en línea.</p>
+             <p>Algunos signos de alerta incluyen:
+             <ul style="text-align: left; max-width: 600px; margin: auto;">
+                 <li>Correos que te piden información urgente o personal.</li>
+                 <li>Promesas de premios o regalos sospechosamente buenos.</li>
+                 <li>Faltas de ortografía y direcciones web extrañas.</li>
+             </ul>
+             </p>
+         <div class="quiz">
+              <h3>Cuestionario:</h3>
+              <p>¿Cuál de los siguientes es un posible signo de fraude?</p>
+              <input type="radio" id="q3a1" name="q3" value="a">
+              <label for="q3a1">Un correo con ofertas legítimas de tu banco</label><br>
+              <input type="radio" id="q3a2" name="q3" value="b">
+              <label for="q3a2">Un correo que te pide datos personales urgentemente</label><br>
+              <input type="radio" id="q3a3" name="q3" value="c">
+              <label for="q3a3">Una invitación a una videollamada escolar</label><br>
+              <button class="submit-btn" onclick="checkAnswer('q3', 'b', 3)">Enviar</button>
+              <div id="feedback3" class="feedback-panel" style="display: none;"></div>
+              <button class="next-btn" id="next3" style="display: none;" onclick="navigateModule(4)">Siguiente</button>
+         </div>
+        </div>
+
+<div id="module4" class="course-module" style="display: none;">
+    <h2><i class="fas fa-lock"></i> Módulo 4: Contraseñas fuertes</h2>
+    <p>Una contraseña fuerte es la primera barrera para proteger tu información en internet. Las contraseñas débiles pueden ser adivinadas fácilmente por los atacantes.</p>
+    <p>Para crear una contraseña segura, recuerda:</p>
+    <ul style="text-align: left; max-width: 600px; margin: auto;">
+        <li>Debe tener al menos 8 caracteres.</li>
+        <li>Usa una combinación de letras mayúsculas, minúsculas, números y símbolos.</li>
+        <li>No uses información personal como tu nombre o fecha de nacimiento.</li>
+        <li>No repitas contraseñas entre diferentes cuentas.</li>
+    </ul>
+    <div class="quiz">
+        <h3>Cuestionario:</h3>
+        <p>¿Cuál de las siguientes opciones representa una contraseña segura?</p>
+        <input type="radio" id="q4a1" name="q4" value="a">
+        <label for="q4a1">123456</label><br>
+        <input type="radio" id="q4a2" name="q4" value="b">
+        <label for="q4a2">María2008</label><br>
+        <input type="radio" id="q4a3" name="q4" value="c">
+        <label for="q4a3">T3$t!Segura#2025</label><br>
+        <button class="submit-btn" onclick="checkAnswer('q4', 'c', 4)">Enviar</button>
+        <div id="feedback4" class="feedback-panel" style="display: none;"></div>
+        <button class="next-btn" id="next4" style="display: none;" onclick="navigateModule(5)">Siguiente</button>
+    </div>
+</div>
+
+<div id="module5" class="course-module" style="display: none;">
+    <h2><i class="fas fa-envelope-open-text"></i> Módulo 5: Phishing y mensajes falsos</h2>
+    <p>El <strong>phishing</strong> es un tipo de fraude en el que los atacantes se hacen pasar por entidades confiables (como bancos, escuelas o servicios conocidos) para engañarte y hacer que reveles información personal, como contraseñas o números de tarjetas.</p>
+    <p>Estos mensajes falsos suelen llegar por correo electrónico, mensajes de texto o incluso en redes sociales. Es importante aprender a detectarlos.</p>
+    <ul style="text-align: left; max-width: 600px; margin: auto;">
+        <li>Revisa el remitente del mensaje cuidadosamente.</li>
+        <li>No hagas clic en enlaces sospechosos o desconocidos.</li>
+        <li>Desconfía de mensajes que te presionan con urgencia.</li>
+        <li>Los bancos y servicios legítimos nunca te piden contraseñas por correo.</li>
+    </ul>
+    <div class="quiz">
+        <h3>Cuestionario:</h3>
+        <p>¿Cuál de los siguientes mensajes podría ser un intento de phishing?</p>
+        <input type="radio" id="q5a1" name="q5" value="a">
+        <label for="q5a1">Tu amigo te envía una foto de la última salida juntos.</label><br>
+        <input type="radio" id="q5a2" name="q5" value="b">
+        <label for="q5a2">Un correo de tu banco diciendo que verifiques tu cuenta urgentemente haciendo clic en un enlace.</label><br>
+        <input type="radio" id="q5a3" name="q5" value="c">
+        <label for="q5a3">Una invitación de tu profesor a una videollamada.</label><br>
+        <button class="submit-btn" onclick="checkAnswer('q5', 'b', 5)">Enviar</button>
+        <div id="feedback5" class="feedback-panel" style="display: none;"></div>
+        <button class="next-btn" id="next5" style="display: none;" onclick="navigateModule(6)">Siguiente</button>
+    </div>
+</div>
+
+<div id="module6" class="course-module" style="display: none;">
+    <h2><i class="fas fa-user-secret"></i> Módulo 6: Phishing (profundización)</h2>
+    <p>En este módulo, profundizaremos en cómo operan los ataques de phishing y qué técnicas utilizan los delincuentes para hacer que sus mensajes parezcan reales.</p>
+    <p>Los atacantes pueden:</p>
+    <ul style="text-align: left; max-width: 600px; margin: auto;">
+        <li>Clonar páginas web legítimas para que ingreses tus datos sin saber que es falso.</li>
+        <li>Usar logotipos y firmas reales de empresas conocidas para ganar tu confianza.</li>
+        <li>Manipular direcciones web (como www.paypa1.com en lugar de www.paypal.com).</li>
+        <li>Enviar archivos adjuntos con virus o programas espía.</li>
+    </ul>
+    <p><strong>Consejo:</strong> Si recibes un mensaje sospechoso, verifica siempre directamente con la empresa o persona a través de medios oficiales.</p>
+
+    <div class="quiz">
+        <h3>Cuestionario:</h3>
+        <p>¿Cuál de las siguientes acciones te ayudará a evitar caer en un ataque de phishing?</p>
+        <input type="radio" id="q6a1" name="q6" value="a">
+        <label for="q6a1">Hacer clic rápidamente en cualquier enlace recibido</label><br>
+        <input type="radio" id="q6a2" name="q6" value="b">
+        <label for="q6a2">Verificar el enlace y contactar a la entidad desde su sitio oficial</label><br>
+        <input type="radio" id="q6a3" name="q6" value="c">
+        <label for="q6a3">Responder con tu contraseña para confirmar tu identidad</label><br>
+        <button class="submit-btn" onclick="checkAnswer('q6', 'b', 6)">Enviar</button>
+        <div id="feedback6" class="feedback-panel" style="display: none;"></div>
+        <button class="next-btn" id="next6" style="display: none;" onclick="navigateModule(7)">Siguiente</button>
+    </div>
+</div>
+
+<div id="module7" class="course-module" style="display: none;">
+    <h2><i class="fas fa-user-shield"></i> Módulo 7: Protección en redes sociales</h2>
+    <p>Las redes sociales pueden ser divertidas, pero también pueden representar un riesgo si no se usan de forma responsable. Los atacantes pueden obtener información personal desde tus publicaciones o incluso suplantar tu identidad.</p>
+    <ul style="text-align: left; max-width: 600px; margin: auto;">
+        <li>No compartas tu dirección, escuela o número de teléfono públicamente.</li>
+        <li>Configura tu perfil como privado.</li>
+        <li>No aceptes solicitudes de amistad de personas que no conoces.</li>
+        <li>Evita publicar detalles sobre tus rutinas o viajes en tiempo real.</li>
+    </ul>
+
+    <div class="quiz">
+        <h3>Cuestionario:</h3>
+        <p>¿Cuál es una buena práctica de seguridad en redes sociales?</p>
+        <input type="radio" id="q7a1" name="q7" value="a">
+        <label for="q7a1">Aceptar a todos los que te envíen solicitud</label><br>
+        <input type="radio" id="q7a2" name="q7" value="b">
+        <label for="q7a2">Publicar tu ubicación en tiempo real</label><br>
+        <input type="radio" id="q7a3" name="q7" value="c">
+        <label for="q7a3">Configurar tu perfil como privado y compartir solo con amigos</label><br>
+        <button class="submit-btn" onclick="checkAnswer('q7', 'c', 7)">Enviar</button>
+        <div id="feedback7" class="feedback-panel" style="display: none;"></div>
+        <button class="next-btn" id="next7" style="display: none;" onclick="navigateModule(8)">Siguiente</button>
+    </div>
+</div>
+
+<div id="module8" class="course-module" style="display: none;">
+    <h2><i class="fas fa-mobile-alt"></i> Módulo 8: Seguridad en dispositivos móviles</h2>
+    <p>Tu celular es una puerta a tu información personal. Por eso, es vital mantenerlo seguro.</p>
+    <ul style="text-align: left; max-width: 600px; margin: auto;">
+        <li>Usa contraseña, huella digital o reconocimiento facial para desbloquearlo.</li>
+        <li>Instala apps solo desde tiendas oficiales.</li>
+        <li>Activa el rastreo en caso de pérdida o robo.</li>
+        <li>No conectes tu celular a cargadores públicos sin protección.</li>
+    </ul>
+
+    <div class="quiz">
+        <h3>Cuestionario:</h3>
+        <p>¿Qué medida ayuda a proteger tu celular?</p>
+        <input type="radio" id="q8a1" name="q8" value="a">
+        <label for="q8a1">Instalar aplicaciones desde sitios desconocidos</label><br>
+        <input type="radio" id="q8a2" name="q8" value="b">
+        <label for="q8a2">No poner ninguna clave de seguridad</label><br>
+        <input type="radio" id="q8a3" name="q8" value="c">
+        <label for="q8a3">Usar contraseña o huella digital para bloquear el dispositivo</label><br>
+        <button class="submit-btn" onclick="checkAnswer('q8', 'c', 8)">Enviar</button>
+        <div id="feedback8" class="feedback-panel" style="display: none;"></div>
+        <button class="next-btn" id="next8" style="display: none;" onclick="navigateModule(9)">Siguiente</button>
+    </div>
+</div>
+
+<div id="module9" class="course-module" style="display: none;">
+    <h2><i class="fas fa-wifi"></i> Módulo 9: Cómo usar Wi-Fi seguro</h2>
+    <p>Conectarse a redes Wi-Fi públicas puede parecer conveniente, pero muchas veces no son seguras.</p>
+    <ul style="text-align: left; max-width: 600px; margin: auto;">
+        <li>Evita ingresar datos personales o bancarios desde redes públicas.</li>
+        <li>Conéctate solo a redes conocidas o protegidas con contraseña.</li>
+        <li>Utiliza una red privada virtual (VPN) para mayor seguridad.</li>
+        <li>Desactiva la conexión automática a redes Wi-Fi abiertas.</li>
+    </ul>
+
+    <div class="quiz">
+        <h3>Cuestionario:</h3>
+        <p>¿Qué debes hacer si necesitas conectarte a una red Wi-Fi pública?</p>
+        <input type="radio" id="q9a1" name="q9" value="a">
+        <label for="q9a1">Acceder a tu cuenta bancaria sin problema</label><br>
+        <input type="radio" id="q9a2" name="q9" value="b">
+        <label for="q9a2">Conectarte sin preocuparte si es abierta</label><br>
+        <input type="radio" id="q9a3" name="q9" value="c">
+        <label for="q9a3">Evitar ingresar información sensible y usar una VPN</label><br>
+        <button class="submit-btn" onclick="checkAnswer('q9', 'c', 9)">Enviar</button>
+        <div id="feedback9" class="feedback-panel" style="display: none;"></div>
+        <button class="next-btn" id="next9" style="display: none;" onclick="navigateModule(10)">Siguiente</button>
+    </div>
+</div>
+
+<div id="module10" class="course-module" style="display: none;">
+    <h2><i class="fas fa-laptop-house"></i> Módulo 10: Seguridad en el teletrabajo</h2>
+    <p>Cuando estudias o trabajas desde casa, también necesitas aplicar medidas de ciberseguridad.</p>
+    <ul style="text-align: left; max-width: 600px; margin: auto;">
+        <li>Usa conexiones seguras y evita redes compartidas sin protección.</li>
+        <li>Actualiza tu sistema operativo y antivirus frecuentemente.</li>
+        <li>Bloquea tu equipo cuando te alejes.</li>
+        <li>No compartas tu pantalla si tienes información sensible visible.</li>
+    </ul>
+
+    <div class="quiz">
+        <h3>Cuestionario:</h3>
+        <p>¿Qué es recomendable hacer durante el teletrabajo?</p>
+        <input type="radio" id="q10a1" name="q10" value="a">
+        <label for="q10a1">Compartir tu pantalla sin revisar qué se muestra</label><br>
+        <input type="radio" id="q10a2" name="q10" value="b">
+        <label for="q10a2">Actualizar tu antivirus y bloquear el equipo al alejarte</label><br>
+        <input type="radio" id="q10a3" name="q10" value="c">
+        <label for="q10a3">Dejar la sesión abierta todo el día</label><br>
+        <button class="submit-btn" onclick="checkAnswer('q10', 'b', 10)">Enviar</button>
+        <div id="feedback10" class="feedback-panel" style="display: none;"></div>
+        <button class="next-btn" id="next10" style="display: none;" onclick="navigateModule(11)">Siguiente</button>
+    </div>
+</div>
+
+<div id="module11" class="course-module" style="display: none;">
+    <h2><i class="fas fa-leaf"></i> Módulo 11: Impacto ambiental de la tecnología</h2>
+    <p>El uso de la tecnología también tiene un impacto ambiental. Desde la producción de dispositivos hasta el consumo energético de los centros de datos, cada clic cuenta.</p>
+    <ul style="text-align: left; max-width: 600px; margin: auto;">
+        <li>Apaga dispositivos cuando no los estés usando.</li>
+        <li>Recicla equipos electrónicos correctamente.</li>
+        <li>Evita imprimir innecesariamente.</li>
+        <li>Elige servicios digitales sostenibles y eficientes.</li>
+    </ul>
+
+    <div class="quiz">
+        <h3>Cuestionario:</h3>
+        <p>¿Qué acción ayuda a reducir el impacto ambiental de la tecnología?</p>
+        <input type="radio" id="q11a1" name="q11" value="a">
+        <label for="q11a1">Mantener la computadora encendida todo el día</label><br>
+        <input type="radio" id="q11a2" name="q11" value="b">
+        <label for="q11a2">Apagar dispositivos cuando no se usan</label><br>
+        <input type="radio" id="q11a3" name="q11" value="c">
+        <label for="q11a3">Imprimir todos los documentos</label><br>
+        <button class="submit-btn" onclick="checkAnswer('q11', 'b', 11)">Enviar</button>
+        <div id="feedback11" class="feedback-panel" style="display: none;"></div>
+        <button class="next-btn" id="next11" style="display: none;" onclick="navigateModule(12)">Siguiente</button>
+    </div>
+</div>
+
+<div id="module12" class="course-module" style="display: none;">
+    <h2><i class="fas fa-trophy"></i> Módulo 12: ¡Felicidades!</h2>
+    <p>🎉 ¡Has completado el curso de ciberseguridad! Ahora tienes los conocimientos esenciales para proteger tu identidad, tus dispositivos y tu información en el mundo digital.</p>
+
+    <ul style="text-align: left; max-width: 600px; margin: auto;">
+        <li>Reconoces fraudes y amenazas comunes.</li>
+        <li>Sabes crear contraseñas seguras.</li>
+        <li>Entiendes cómo proteger tus redes sociales y dispositivos.</li>
+        <li>Conoces el impacto ambiental de la tecnología.</li>
+    </ul>
+
+    <p style="margin-top: 20px;">¡Gracias por participar y recuerda aplicar lo aprendido todos los días! 🚀</p>
+
+</div>
+
+    <script src="Curso2.js"></script>
+</body>
+</html>

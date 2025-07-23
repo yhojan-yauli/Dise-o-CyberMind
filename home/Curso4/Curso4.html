@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciberseguridad para Estudiantes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Curso4.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="/">Ciberseguridad para Estudiantes: Aprende Jugando, Navega Seguro</a>
+            </div>
+        </nav>
+        <div class="module-nav">
+            <button class="nav-btn" onclick="navigateModule(1)"><i class="fas fa-check"></i> Bienvenida</button>
+            <button class="nav-btn" disabled onclick="navigateModule(2)">¿Por qué importa la ciberseguridad?</button>
+            <button class="nav-btn" disabled onclick="navigateModule(3)">Peligros comunes en redes y apps</button>
+            <button class="nav-btn" disabled onclick="navigateModule(4)">Haz tus contraseñas más fuertes</button>
+            <button class="nav-btn" disabled onclick="navigateModule(5)">Activa la verificación en dos pasos</button>
+            <button class="nav-btn" disabled onclick="navigateModule(6)">¿Es real este mensaje?</button>
+            <button class="nav-btn" disabled onclick="navigateModule(7)">Navega sin riesgos</button>
+            <button class="nav-btn" disabled onclick="navigateModule(8)">Publica con cuidado</button>
+            <button class="nav-btn" disabled onclick="navigateModule(9)">Cuida tu celular</button>
+            <button class="nav-btn" disabled onclick="navigateModule(10)">Wi-Fi: conéctate con seguridad</button>
+            <button class="nav-btn" disabled onclick="navigateModule(11)">Consejos para tu día a día</button>
+            <button class="nav-btn" disabled onclick="navigateModule(12)">¡Felicidades!</button>
+        </div>
+    </header>
+
+    <main class="course-content">
+        <div id="module1" class="course-module">
+  <h2><i class="fas fa-door-open"></i> Módulo 1: Bienvenida</h2>
+  <p>¡Bienvenido/a al curso <strong>“Ciberseguridad Rápida para Todos”</strong>! Aquí aprenderás consejos fáciles y rápidos para protegerte mientras usas redes sociales, aplicaciones y servicios en línea. No necesitas conocimientos técnicos, solo ganas de cuidarte. ¡Empezamos!</p>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Cuál es el objetivo de este curso?</p>
+    <input type="radio" id="q1a1" name="q1" value="a">
+    <label for="q1a1">Convertirse en hacker profesional</label><br>
+    <input type="radio" id="q1a2" name="q1" value="b">
+    <label for="q1a2">Aprender consejos prácticos para cuidarse en internet</label><br>
+    <input type="radio" id="q1a3" name="q1" value="c">
+    <label for="q1a3">Aprender a diseñar páginas web</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q1', 'b', 1)">Enviar</button>
+    <div id="feedback1" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next1" style="display: none;" onclick="navigateModule(2)">Siguiente</button>
+  </div>
+</div>
+
+        <div id="module2" class="course-module" style="display: none;">
+  <h2><i class="fas fa-shield-alt"></i> Módulo 2: ¿Por qué importa la ciberseguridad?</h2>
+  <p>Cada vez que usas tu celular o computadora, compartes datos personales. Si no los proteges, podrías ser víctima de fraudes, robo de identidad o pérdida de información. La ciberseguridad te ayuda a evitar estos riesgos con acciones simples.</p>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Por qué es importante proteger tus datos digitales?</p>
+    <input type="radio" id="q2a1" name="q2" value="a">
+    <label for="q2a1">Porque es obligatorio por ley</label><br>
+    <input type="radio" id="q2a2" name="q2" value="b">
+    <label for="q2a2">Para evitar fraudes y proteger tu información personal</label><br>
+    <input type="radio" id="q2a3" name="q2" value="c">
+    <label for="q2a3">Porque lo hacen todos</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q2', 'b', 2)">Enviar</button>
+    <div id="feedback2" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next2" style="display: none;" onclick="navigateModule(3)">Siguiente</button>
+  </div>
+</div>
+
+        <div id="module3" class="course-module" style="display: none;">
+  <h2><i class="fas fa-exclamation-circle"></i> Módulo 3: Peligros comunes en redes y apps</h2>
+  <p>Apps y redes sociales pueden parecer seguras, pero hay muchos peligros: personas falsas, enlaces con virus, mensajes que intentan engañarte, y apps que piden permisos innecesarios. Saber identificarlos es el primer paso para protegerte.</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>No hagas clic en enlaces raros que te mandan por mensaje.</li>
+    <li>Revisa qué permisos pide cada app antes de instalarla.</li>
+    <li>No compartas tu ubicación ni datos personales con desconocidos.</li>
+  </ul>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Qué deberías evitar hacer en redes o apps?</p>
+    <input type="radio" id="q3a1" name="q3" value="a">
+    <label for="q3a1">Compartir tu contraseña con amigos</label><br>
+    <input type="radio" id="q3a2" name="q3" value="b">
+    <label for="q3a2">Hacer clic en enlaces sospechosos</label><br>
+    <input type="radio" id="q3a3" name="q3" value="c">
+    <label for="q3a3">Todo lo anterior</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q3', 'c', 3)">Enviar</button>
+    <div id="feedback3" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next3" style="display: none;" onclick="navigateModule(4)">Siguiente</button>
+  </div>
+</div>
+
+<div id="module4" class="course-module" style="display: none;">
+  <h2><i class="fas fa-key"></i> Módulo 4: Haz tus contraseñas más fuertes</h2>
+  <p>Una buena contraseña es como una llave secreta. Si alguien la adivina, puede entrar a tus cuentas. Las contraseñas fáciles como "123456" o tu fecha de nacimiento son muy peligrosas.</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>Usa letras mayúsculas, minúsculas, números y símbolos.</li>
+    <li>No repitas la misma contraseña en todos lados.</li>
+    <li>Evita palabras fáciles como "contraseña" o tu nombre.</li>
+    <li>Puedes usar un administrador de contraseñas para recordarlas.</li>
+  </ul>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Cuál de estas contraseñas es más segura?</p>
+    <input type="radio" id="q4a1" name="q4" value="a">
+    <label for="q4a1">MiNombre123</label><br>
+    <input type="radio" id="q4a2" name="q4" value="b">
+    <label for="q4a2">abc123</label><br>
+    <input type="radio" id="q4a3" name="q4" value="c">
+    <label for="q4a3">S3gura!2024#</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q4', 'c', 4)">Enviar</button>
+    <div id="feedback4" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next4" style="display: none;" onclick="navigateModule(5)">Siguiente</button>
+  </div>
+</div>
+
+<div id="module5" class="course-module" style="display: none;">
+  <h2><i class="fas fa-shield-alt"></i> Módulo 5: Activa la verificación en dos pasos</h2>
+  <p>La verificación en dos pasos (también conocida como 2FA) agrega una capa extra de seguridad. Aunque alguien consiga tu contraseña, necesitará un segundo código (como uno enviado a tu celular) para entrar a tu cuenta.</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>Activa esta función en tus cuentas importantes (como correo, redes sociales o apps bancarias).</li>
+    <li>El segundo paso puede ser un mensaje SMS, una app de autenticación o una clave enviada por correo.</li>
+    <li>Es fácil de configurar y te protege mucho más.</li>
+  </ul>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Qué hace la verificación en dos pasos?</p>
+    <input type="radio" id="q5a1" name="q5" value="a">
+    <label for="q5a1">Evita que uses contraseñas</label><br>
+    <input type="radio" id="q5a2" name="q5" value="b">
+    <label for="q5a2">Agrega un paso extra para verificar tu identidad</label><br>
+    <input type="radio" id="q5a3" name="q5" value="c">
+    <label for="q5a3">Te conecta automáticamente a Wi-Fi</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q5', 'b', 5)">Enviar</button>
+    <div id="feedback5" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next5" style="display: none;" onclick="navigateModule(6)">Siguiente</button>
+  </div>
+</div>
+
+<div id="module6" class="course-module" style="display: none;">
+  <h2><i class="fas fa-envelope"></i> Módulo 6: ¿Es real este mensaje?</h2>
+  <p>Algunos mensajes parecen venir de personas o empresas confiables, pero son falsos. Se les conoce como intentos de <strong>phishing</strong>. Estos mensajes buscan engañarte para que hagas clic en enlaces peligrosos o des tus datos.</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>Revisa el remitente con atención.</li>
+    <li>Desconfía si te piden datos personales o urgencia para actuar.</li>
+    <li>No descargues archivos sospechosos.</li>
+  </ul>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Qué deberías hacer si recibes un mensaje sospechoso?</p>
+    <input type="radio" id="q6a1" name="q6" value="a">
+    <label for="q6a1">Responder inmediatamente con tus datos</label><br>
+    <input type="radio" id="q6a2" name="q6" value="b">
+    <label for="q6a2">Verificar el mensaje directamente con la fuente oficial</label><br>
+    <input type="radio" id="q6a3" name="q6" value="c">
+    <label for="q6a3">Hacer clic sin revisar</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q6', 'b', 6)">Enviar</button>
+    <div id="feedback6" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next6" style="display: none;" onclick="navigateModule(7)">Siguiente</button>
+  </div>
+</div>
+
+<div id="module7" class="course-module" style="display: none;">
+  <h2><i class="fas fa-globe"></i> Módulo 7: Navega sin riesgos</h2>
+  <p>Internet es útil y divertido, pero también puede tener trampas. Al navegar, es importante saber qué sitios son confiables y cómo evitar caer en sitios maliciosos.</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>Evita páginas con anuncios invasivos o que te piden instalar cosas.</li>
+    <li>Revisa que el sitio comience con “https://” y tenga un candado en la barra.</li>
+    <li>No descargues archivos de fuentes desconocidas.</li>
+    <li>Ten tu navegador actualizado y protegido con antivirus.</li>
+  </ul>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Qué sitio es más seguro para navegar?</p>
+    <input type="radio" id="q7a1" name="q7" value="a">
+    <label for="q7a1">http://misitiogratis.xyz</label><br>
+    <input type="radio" id="q7a2" name="q7" value="b">
+    <label for="q7a2">https://tubanco.com</label><br>
+    <input type="radio" id="q7a3" name="q7" value="c">
+    <label for="q7a3">Sitios que piden instalar plugins sospechosos</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q7', 'b', 7)">Enviar</button>
+    <div id="feedback7" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next7" style="display: none;" onclick="navigateModule(8)">Siguiente</button>
+  </div>
+</div>
+
+<div id="module8" class="course-module" style="display: none;">
+  <h2><i class="fas fa-user-lock"></i> Módulo 8: Publica con cuidado</h2>
+  <p>Todo lo que publicas en redes sociales puede ser visto por más personas de las que imaginas. Compartir demasiado puede ponerte en riesgo.</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>No publiques información como dirección, escuela, rutinas o números de teléfono.</li>
+    <li>Piensa antes de publicar fotos privadas o de otras personas.</li>
+    <li>Configura la privacidad de tus cuentas.</li>
+    <li>Recuerda: lo que subes, puede quedar en internet para siempre.</li>
+  </ul>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Cuál es una buena práctica al usar redes sociales?</p>
+    <input type="radio" id="q8a1" name="q8" value="a">
+    <label for="q8a1">Compartir tus vacaciones en tiempo real con todos</label><br>
+    <input type="radio" id="q8a2" name="q8" value="b">
+    <label for="q8a2">Revisar la configuración de privacidad de tus publicaciones</label><br>
+    <input type="radio" id="q8a3" name="q8" value="c">
+    <label for="q8a3">Publicar tus contraseñas para no olvidarlas</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q8', 'b', 8)">Enviar</button>
+    <div id="feedback8" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next8" style="display: none;" onclick="navigateModule(9)">Siguiente</button>
+  </div>
+</div>
+
+<div id="module9" class="course-module" style="display: none;">
+  <h2><i class="fas fa-mobile-alt"></i> Módulo 9: Cuida tu celular</h2>
+  <p>Tu celular guarda fotos, contraseñas, mensajes y acceso a muchas apps. Es como llevar una mini computadora personal en el bolsillo. ¡Protégelo!</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>Bloquéalo con huella, PIN o reconocimiento facial.</li>
+    <li>No dejes que otros usen tus apps sin permiso.</li>
+    <li>Actualiza el sistema y tus apps para mantenerte protegido.</li>
+    <li>Instala un rastreador por si lo pierdes o te lo roban.</li>
+  </ul>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Qué puedes hacer para proteger tu celular?</p>
+    <input type="radio" id="q9a1" name="q9" value="a">
+    <label for="q9a1">Dejarlo desbloqueado para más comodidad</label><br>
+    <input type="radio" id="q9a2" name="q9" value="b">
+    <label for="q9a2">Bloquearlo con huella o PIN y mantenerlo actualizado</label><br>
+    <input type="radio" id="q9a3" name="q9" value="c">
+    <label for="q9a3">Prestarlo a desconocidos si te lo piden</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q9', 'b', 9)">Enviar</button>
+    <div id="feedback9" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next9" style="display: none;" onclick="navigateModule(10)">Siguiente</button>
+  </div>
+</div>
+
+<div id="module10" class="course-module" style="display: none;">
+  <h2><i class="fas fa-wifi"></i> Módulo 10: Wi-Fi: conéctate con seguridad</h2>
+  <p>Las redes Wi-Fi abiertas o desconocidas pueden ponerte en riesgo. Alguien podría ver lo que haces o robar tus datos.</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>Evita usar redes públicas para entrar a tus cuentas.</li>
+    <li>Conéctate solo a redes conocidas y protegidas con contraseña.</li>
+    <li>Activa una VPN para proteger tu conexión.</li>
+    <li>Desactiva la conexión automática a redes abiertas.</li>
+  </ul>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Qué es recomendable hacer al usar Wi-Fi?</p>
+    <input type="radio" id="q10a1" name="q10" value="a">
+    <label for="q10a1">Ingresar tus contraseñas desde cualquier red abierta</label><br>
+    <input type="radio" id="q10a2" name="q10" value="b">
+    <label for="q10a2">Desconectarte de redes desconocidas y usar una VPN</label><br>
+    <input type="radio" id="q10a3" name="q10" value="c">
+    <label for="q10a3">Dejar el Wi-Fi encendido todo el tiempo sin cuidado</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q10', 'b', 10)">Enviar</button>
+    <div id="feedback10" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next10" style="display: none;" onclick="navigateModule(11)">Siguiente</button>
+  </div>
+</div>
+
+<div id="module11" class="course-module" style="display: none;">
+  <h2><i class="fas fa-lightbulb"></i> Módulo 11: Consejos para tu día a día</h2>
+  <p>Aplicar la ciberseguridad todos los días es más fácil de lo que parece. Solo necesitas adoptar hábitos digitales seguros.</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>No compartas tus contraseñas con nadie.</li>
+    <li>Piensa antes de hacer clic o publicar.</li>
+    <li>Actualiza tus dispositivos y apps regularmente.</li>
+    <li>Haz copias de seguridad de tus archivos importantes.</li>
+  </ul>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Cuál de los siguientes es un buen hábito digital?</p>
+    <input type="radio" id="q11a1" name="q11" value="a">
+    <label for="q11a1">Guardar todas tus contraseñas en una libreta de papel</label><br>
+    <input type="radio" id="q11a2" name="q11" value="b">
+    <label for="q11a2">Revisar los enlaces antes de hacer clic y actualizar tus apps</label><br>
+    <input type="radio" id="q11a3" name="q11" value="c">
+    <label for="q11a3">Aceptar cualquier archivo que te envíen</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q11', 'b', 11)">Enviar</button>
+    <div id="feedback11" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next11" style="display: none;" onclick="navigateModule(12)">Siguiente</button>
+  </div>
+</div>
+
+<div id="module12" class="course-module" style="display: none;">
+  <h2><i class="fas fa-trophy"></i> Módulo 12: ¡Felicidades!</h2>
+  <p>🎉 ¡Lo lograste! Has completado el curso <strong>“Ciberseguridad Rápida para Todos”</strong>. Ya sabes cómo cuidarte mejor en redes sociales, apps y en tu vida digital diaria.</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>Sabes crear contraseñas seguras.</li>
+    <li>Detectas mensajes falsos y riesgos en redes.</li>
+    <li>Usas Wi-Fi y dispositivos de forma segura.</li>
+    <li>Aplicas hábitos responsables cada día.</li>
+  </ul>
+  <p style="margin-top: 20px;">Gracias por participar. Comparte este curso y ayúdanos a crear una comunidad digital más segura. 🚀</p>
+</div>
+
+    <script src="Curso4.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+body, html {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa;
+    color: #333;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.module-nav {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: #0077b6;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start;
+    width: 100%;
+    cursor: grab;
+}
+
+.module-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.module-nav.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+.nav-btn {
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    background-color: #005f8a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background-color: #00476b;
+}
+
+.nav-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.nav-btn i {
+    margin-right: 5px;
+}
+
+.course-content {
+    margin-top: 80px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #f4f7fa;
+}
+
+.course-module {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.course-module h2 {
+    color: #0077b6;
+    margin-bottom: 10px;
+}
+
+.course-module p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.quiz {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.submit-btn, .next-btn {
+    padding: 10px 20px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover, .next-btn:hover {
+    background-color: #005f8a;
+}
+
+.feedback-panel {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    text-align: center;
+}
