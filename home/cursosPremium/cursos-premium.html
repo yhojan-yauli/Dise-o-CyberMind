@@ -5,21 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cursos Premium</title>
   <link rel="stylesheet" href="../index.css" />
-  <!-- Opcional: si usas otro CSS adicional -->
-  <!-- <link rel="stylesheet" href="./cursos-premium.css"> -->
+  <script src="https://kit.fontawesome.com/18d320874d.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="navbar-brand">
-        <a href="/">Ciberseguridad</a>
+        <a href="/">Cyber Mind</a>
       </div>
+
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <!-- Botones solo móviles -->
+      <div class="auth-mobile">
+        <a class="btn-login" href="../login/login.html">Iniciar Sesión</a>
+        <a class="btn-register" href="../resgistro/registro.html">Registrarse</a>
+      </div>
+
+      <!-- Navegación -->
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="../cursosPremium/cursos-premium.html">Cursos Premium</a></li>
         <li class="nav-item"><a class="nav-link" href="../foros/foros.html">Foros</a></li>
-        <li class="nav-item"><a class="nav-link btn-login" href="../login/login.html">Iniciar Sesión</a></li>
-        <li class="nav-item"><a class="nav-link btn-register" href="../resgistro/registro.html">Registrarse</a></li>
+        <li class="nav-item navbar-auth-desktop"><a class="nav-link btn-login" href="../login/login.html">Iniciar Sesión</a></li>
+        <li class="nav-item navbar-auth-desktop"><a class="nav-link btn-register" href="../resgistro/registro.html">Registrarse</a></li>
       </ul>
     </nav>
   </header>
@@ -32,7 +44,7 @@
   </main>
 
   <footer>
-    <p>© 2023 Curso de Ciberseguridad</p>
+    <p>© 2023 Cyber Mind - Todos los derechos reservados.</p>
   </footer>
 
   <script src="/js/script.js"></script>

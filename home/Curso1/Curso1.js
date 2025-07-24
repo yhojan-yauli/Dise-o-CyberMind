@@ -149,3 +149,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+function toggleMenu() {
+    const menu = document.getElementById('navbarMenu');
+    menu.classList.toggle('show-menu');
+}

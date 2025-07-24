@@ -1,82 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educación en Ciberseguridad</title>
-    <link rel="stylesheet" href="./index.css">
-    <script src="https://kit.fontawesome.com/18d320874d.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Educación en Ciberseguridad</title>
+  <link rel="stylesheet" href="./index.css" />
+  <script src="https://kit.fontawesome.com/18d320874d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <a href="/">Cyber Mind</a>
-            </div>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="./cursosPremium/cursos-premium.html">Cursos Premium</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="./foros/foros.html">Foros</a></li>
-                <li class="nav-item"><a class="nav-link btn-login" href="./login/login.html">Iniciar Sesión</a></li>
-                <li class="nav-item"><a class="nav-link btn-register" href="./resgistro/registro.html">Registrarse</a></li> 
-            </ul>
-        </nav>
-    </header>
-<main class="full-background">
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="/">Cyber Mind</a>
+      </div>
+
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+
+      <div class="auth-mobile">
+        <a class="btn-login" href="./login/login.html">Iniciar Sesión</a>
+        <a class="btn-register" href="./resgistro/registro.html">Registrarse</a>
+      </div>
+
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="./cursosPremium/cursos-premium.html">Cursos Premium</a></li>
+        <li class="nav-item"><a class="nav-link" href="./foros/foros.html">Foros</a></li>
+        <li class="nav-item navbar-auth-desktop"><a class="nav-link btn-login" href="./login/login.html">Iniciar Sesión</a></li>
+        <li class="nav-item navbar-auth-desktop"><a class="nav-link btn-register" href="./resgistro/registro.html">Registrarse</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="full-background">
     <div class="home-container">
-        <div class="home-image">
-            <img src="/home/imagenes/surface1.png" alt="Imagen Ciberseguridad">
-        </div>
-        <div class="home-content">
-            <h1>¡Bienvenido a Cyber Mind!</h1>
-            <p>Te damos la bienvenida a nuestro espacio dedicado a proteger tu información y fortalecer tus conocimientos en seguridad digital. Aquí encontrarás recursos, consejos, noticias y herramientas esenciales para navegar de forma segura en el mundo digital. Porque tu seguridad en línea no es una opción, es una prioridad.</p>
-            <form action="./SeleccionPerfil/SeleccionPerfil.html" method="get">
-                <button type="submit" class="start-button">Iniciar Curso Gratuito</button>
-            </form>
-        </div>
-    </div>
-</main>
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-left">
-      <h3>Síguenos</h3>
-      <div class="social-icons">
-        <a href="#" class="fa-brands fa-x-twitter"></a>
-        <a href="#" class="fa-brands fa-instagram"></a>
-        <a href="#" class="fa-brands fa-youtube"></a>
-        <a href="#" class="fa-brands fa-linkedin"></a>
+      <div class="home-image">
+        <img src="/home/imagenes/surface1.png" alt="Imagen Ciberseguridad" />
+      </div>
+      <div class="home-content">
+        <h1>¡Bienvenido a Cyber Mind!</h1>
+        <p>
+          Te damos la bienvenida a nuestro espacio dedicado a proteger tu información y fortalecer tus conocimientos en seguridad digital.
+          Aquí encontrarás recursos, consejos, noticias y herramientas esenciales para navegar de forma segura en el mundo digital.
+          Porque tu seguridad en línea no es una opción, es una prioridad.
+        </p>
+        <form action="./SeleccionPerfil/SeleccionPerfil.html" method="get">
+          <button type="submit" class="start-button">Iniciar Curso Gratuito</button>
+        </form>
       </div>
     </div>
+  </main>
 
-    <div class="footer-right">
-      <div class="footer-columns">
-        <div class="footer-col">
-          <h4>Sobre Cyber Mind</h4>
-          <p>Especializados en ciberseguridad y conciencia digital.</p>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="#" class="fa-brands fa-x-twitter"></a>
+          <a href="#" class="fa-brands fa-instagram"></a>
+          <a href="#" class="fa-brands fa-youtube"></a>
+          <a href="#" class="fa-brands fa-linkedin"></a>
         </div>
-        <div class="footer-col">
-          <h4>Aviso legal</h4>
-          <p>Plataforma educativa. No nos responsabilizamos por mal uso.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Privacidad</h4>
-          <p>Protegemos tus datos según la ley peruana.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Contacto</h4>
-          <p>Calle Seguridad Digital 456<br>Arequipa, Perú<br>
-            contacto@cybermind.com<br>+51 912 345 678</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Sobre Cyber Mind</h4>
+            <p>Especializados en ciberseguridad y conciencia digital.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Aviso legal</h4>
+            <p>Plataforma educativa. No nos responsabilizamos por mal uso.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Privacidad</h4>
+            <p>Protegemos tus datos según la ley peruana.</p>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <p>
+              Calle Seguridad Digital 456<br />
+              Arequipa, Perú<br />
+              contacto@cybermind.com<br />
+              +51 912 345 678
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-    <script src="/js/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,229 @@
+/* === ESTILO GENERAL === */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: #0a1f44;
+  color: white;
+}
+
+header {
+  background-color: #fffefe;
+  color: #000;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.navbar-brand a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+/* === NAV LINKS === */
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* === HAMBURGUESA === */
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #000;
+}
+
+/* === BOTONES DE AUTENTICACIÓN === */
+.btn-login,
+.btn-register {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-login {
+  border: 2px solid rgba(30, 30, 30, 0.01);
+  background-color: rgba(30, 30, 30, 0.69);
+  color: #fff;
+}
+
+.btn-login:hover {
+  background-color: rgba(53, 53, 53, 0.69);
+}
+
+.btn-register {
+  border: 2px solid #1E1E1E;
+  background-color: rgba(30, 30, 30, 1);
+  color: white;
+}
+
+.btn-register:hover {
+  background-color: #262626;
+  border-color: #262626;
+}
+
+/* === AUTH SOLO EN MÓVIL === */
+.auth-mobile {
+  display: none;
+}
+
+/* === BACKGROUND PREMIUM === */
+.full-background {
+  background-image: url('/home/imagenes/upscalemedia-transformed.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 140px);
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* === PREMIUM SECTION === */
+.premium-section {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 800px;
+}
+
+.premium-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.premium-section p {
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #fffefe;
+  color: #000;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9em;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+    order: 3;
+    margin-left: 10px;
+  }
+
+  .auth-mobile {
+    display: flex;
+    gap: 10px;
+    order: 2;
+  }
+
+  .navbar-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 200px;
+    padding: 10px 0;
+    z-index: 10;
+  }
+
+  #menu-toggle:checked + .hamburger + .auth-mobile + .navbar-nav {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 12px 20px;
+    color: #000;
+    text-align: left;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link:hover {
+    background-color: #f5f5f5;
+  }
+
+  .navbar-auth-desktop {
+    display: none;
+  }
+
+  .premium-section {
+    padding: 30px 20px;
+  }
+
+  .premium-section h2 {
+    font-size: 1.5em;
+  }
+
+  .premium-section p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand a {
+    font-size: 1.2em;
+  }
+
+  .premium-section h2 {
+    font-size: 1.3em;
+  }
+
+  .premium-section p {
+    font-size: 0.95em;
+  }
+}
