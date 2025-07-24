@@ -18,11 +18,12 @@ function updateButtonStates() {
 }
 
 function navigateModule(moduleNumber) {
-    document.getElementById(`module${currentModule}`).style.display = 'none';
-    currentModule = moduleNumber;
+    const previousDiv = document.getElementById(`module${currentModule}`);
+    if (previousDiv) previousDiv.style.display = 'none';
 
+    currentModule = moduleNumber;
     const currentDiv = document.getElementById(`module${currentModule}`);
-    currentDiv.style.display = 'block';
+    if (currentDiv) currentDiv.style.display = 'block';
 
     const feedbackPanel = document.getElementById(`feedback${currentModule}`);
     const nextButton = document.getElementById(`next${currentModule}`);
@@ -47,18 +48,22 @@ function checkAnswer(questionName, correctAnswer, moduleNumber) {
     const nextButton = document.getElementById(`next${moduleNumber}`);
 
     if (!selectedAnswer) {
-        feedbackPanel.textContent = "Por favor, selecciona una respuesta.";
-        feedbackPanel.style.display = 'block';
-        feedbackPanel.style.backgroundColor = '#f8d7da';
-        nextButton.style.display = 'none';
+        if (feedbackPanel) {
+            feedbackPanel.textContent = "Por favor, selecciona una respuesta.";
+            feedbackPanel.style.display = 'block';
+            feedbackPanel.style.backgroundColor = '#f8d7da';
+        }
+        if (nextButton) nextButton.style.display = 'none';
         return;
     }
 
     if (selectedAnswer.value === correctAnswer) {
-        feedbackPanel.textContent = "¡Respuesta correcta! Puedes avanzar al siguiente módulo.";
-        feedbackPanel.style.display = 'block';
-        feedbackPanel.style.backgroundColor = '#d4edda';
-        nextButton.style.display = 'block';
+        if (feedbackPanel) {
+            feedbackPanel.textContent = "¡Respuesta correcta! Puedes avanzar al siguiente módulo.";
+            feedbackPanel.style.display = 'block';
+            feedbackPanel.style.backgroundColor = '#d4edda';
+        }
+        if (nextButton) nextButton.style.display = 'block';
 
         completedModules[moduleNumber] = true;
 
@@ -68,28 +73,47 @@ function checkAnswer(questionName, correctAnswer, moduleNumber) {
 
         updateButtonStates();
     } else {
-        feedbackPanel.textContent = "Respuesta incorrecta. Por favor, inténtalo de nuevo.";
-        feedbackPanel.style.display = 'block';
-        feedbackPanel.style.backgroundColor = '#f8d7da';
-        nextButton.style.display = 'none';
+        if (feedbackPanel) {
+            feedbackPanel.textContent = "Respuesta incorrecta. Por favor, inténtalo de nuevo.";
+            feedbackPanel.style.display = 'block';
+            feedbackPanel.style.backgroundColor = '#f8d7da';
+        }
+        if (nextButton) nextButton.style.display = 'none';
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = function () {
     document.getElementById(`module${currentModule}`).style.display = 'block';
     updateButtonStates();
 
-    const moduleNav = document.querySelector('.module-nav');
+    const submitButtons = document.querySelectorAll('.submit-btn');
+    submitButtons.forEach((button, index) => {
+        button.addEventListener('click', function () {
+            const moduleNumber = parseInt(this.closest('.quiz').parentElement.id.replace('module', ''), 10);
+            const questionName = `q${moduleNumber}`;
+            const correctAnswer = getCorrectAnswer(questionName);
+            checkAnswer(questionName, correctAnswer, moduleNumber);
+        });
+    });
 
+    const nextButtons = document.querySelectorAll('.next-btn');
+    nextButtons.forEach((button) => {
+        button.addEventListener('click', function () {
+            const moduleNumber = parseInt(this.closest('.course-module').id.replace('module', ''), 10);
+            navigateModule(moduleNumber + 1);
+        });
+    });
+
+    const moduleNav = document.querySelector('.module-nav');
     let isDragging = false;
     let startX;
     let scrollLeft;
 
     moduleNav.addEventListener('mousedown', (e) => {
         isDragging = true;
-        moduleNav.classList.add('dragging');
         startX = e.pageX - moduleNav.offsetLeft;
         scrollLeft = moduleNav.scrollLeft;
+        moduleNav.classList.add('dragging');
     });
 
     moduleNav.addEventListener('mouseleave', () => {
@@ -133,24 +157,25 @@ document.addEventListener("DOMContentLoaded", () => {
             moduleNav.scrollLeft += e.deltaY;
         }
     });
+};
 
-    const headerLinks = document.querySelectorAll('header .nav-link');
+window.onbeforeunload = function () {
+    return "¿Estás seguro de salir de esta página? Perderás tu progreso actual.";
+};
 
-    headerLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetUrl = this.href;
-
-            const confirmLeave = confirm("¿Estás seguro de salir de esta página? Perderás tu progreso actual.");
-
-            if (confirmLeave) {
-                window.location.href = targetUrl;
-            }
-        });
-    });
-});
-
-function toggleMenu() {
-    const menu = document.getElementById('navbarMenu');
-    menu.classList.toggle('show-menu');
+function getCorrectAnswer(questionName) {
+    const answers = {
+        q1: 'b',
+        q2: 'b',
+        q3: 'b',
+        q4: 'c',
+        q5: 'b',
+        q6: 'b',
+        q7: 'c',
+        q8: 'b',
+        q9: 'b',
+        q10: 'b',
+        q11: 'b'
+    };
+    return answers[questionName];
 }
