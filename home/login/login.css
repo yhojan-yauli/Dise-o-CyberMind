@@ -1,16 +1,14 @@
-/* Fondo del main con imagen */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 120px); /* Ajusta si header/footer cambian */
+    height: calc(100vh - 120px);
     background-image: url('/home/imagenes/upscalemedia-transformed.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Tarjeta del formulario */
 section {
     background: linear-gradient(
         to bottom,
@@ -138,7 +136,6 @@ button:hover {
     }
 }
 
-/* ====== HAMBURGUESA SOLO EN MÓVIL ====== */
 .hamburger {
   display: none;
   font-size: 1.8em;
