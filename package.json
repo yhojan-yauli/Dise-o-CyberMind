@@ -1,7 +1,0 @@
-{
-  "name": "CyberMind",
-  "version": "1.0.0",
-  "dependencies": {
-    "alguna-dependencia": "^1.2.3"
-  }
-}
