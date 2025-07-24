@@ -1,4 +1,3 @@
-/* === ESTILO GENERAL === */
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -29,7 +28,6 @@ header {
   font-size: 1.5em;
 }
 
-/* === NAV LINKS === */
 .navbar-nav {
   list-style: none;
   display: flex;
@@ -50,7 +48,6 @@ header {
   text-decoration: underline;
 }
 
-/* === HAMBURGUESA === */
 #menu-toggle {
   display: none;
 }
@@ -62,7 +59,6 @@ header {
   color: #000;
 }
 
-/* === BOTONES DE AUTENTICACIÓN === */
 .btn-login,
 .btn-register {
   padding: 6px 14px;
@@ -92,12 +88,10 @@ header {
   border-color: #262626;
 }
 
-/* === AUTH SOLO EN MÓVIL === */
 .auth-mobile {
   display: none;
 }
 
-/* === BACKGROUND PREMIUM === */
 .full-background {
   background-image: url('/home/imagenes/upscalemedia-transformed.jpeg');
   background-size: cover;
@@ -112,7 +106,6 @@ header {
   color: white;
 }
 
-/* === PREMIUM SECTION === */
 .premium-section {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
@@ -131,7 +124,6 @@ header {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* === FOOTER === */
 footer {
   background-color: #fffefe;
   color: #000;
@@ -140,7 +132,6 @@ footer {
   font-size: 0.9em;
 }
 
-/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: row;

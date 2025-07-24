@@ -74,35 +74,6 @@ header {
     text-decoration: underline;
 }
 
-.btn-login,
-.btn-register {
-    padding: 6px 14px;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn-login {
-    border: 2px solid rgba(30, 30, 30, 0.01);
-    background-color: rgba(30, 30, 30, 0.69);
-    color: #fff;
-}
-
-.btn-login:hover {
-    background-color: rgba(53, 53, 53, 0.69);
-}
-
-.btn-register {
-    border: 2px solid #1E1E1E;
-    background-color: rgba(30, 30, 30, 1);
-    color: white;
-}
-
-.btn-register:hover {
-    background-color: #262626;
-    border-color: #262626;
-}
-
 .module-nav {
     display: flex;
     overflow-x: auto;
@@ -159,7 +130,7 @@ header {
 }
 
 .course-module {
-    background: rgba(255, 255, 255, 0.95);
+    background: linear-gradient(to bottom, #ffffff, #d0eaff);
     padding: 30px;
     border-radius: 10px;
     width: 100%;
@@ -210,6 +181,7 @@ header {
     text-align: center;
 }
 
+/* TABLET Y MÓVIL GRANDE */
 @media (max-width: 768px) {
     .navbar {
         flex-wrap: wrap;
@@ -266,6 +238,10 @@ header {
         margin: 10px 0;
     }
 
+    .course-content {
+        padding: 15px;
+    }
+
     .course-module {
         padding: 20px;
         max-height: none;
@@ -286,13 +262,17 @@ header {
     }
 }
 
+/* MÓVILES PEQUEÑOS */
 @media (max-width: 480px) {
     .course-content {
         padding: 10px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .course-module {
         padding: 15px;
+        max-height: none;
     }
 
     .nav-btn {
@@ -301,14 +281,30 @@ header {
     }
 
     .submit-btn, .next-btn {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
         font-size: 13px;
         padding: 6px 12px;
     }
 
+    .quiz {
+        font-size: 15px;
+        padding-bottom: 30px;
+    }
+
     .navbar-brand a {
-        font-size: 1.1em;
+        font-size: 0.85em;
+        white-space: normal;
+        line-height: 1.2;
     }
 
     .navbar-nav {
         align-items: flex-start;
     }
+
+    .module-nav {
+        padding: 5px;
+    }
+}
