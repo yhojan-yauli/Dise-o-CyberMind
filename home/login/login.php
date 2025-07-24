@@ -7,6 +7,8 @@
     <title>Login</title>
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="../login/login.css">
+    <script src="https://kit.fontawesome.com/18d320874d.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -40,7 +42,10 @@
             <label for="username">Usuario:</label>
                 <input type="text" id="username" name="user" required>
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="pass" required>
+                <div class="password-input-container">
+                    <input type="password" id="password" name="pass" required>
+                    <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                </div>
 
 
 
@@ -62,6 +67,14 @@
         document.getElementById("username").value = "";
         document.getElementById("password").value = "";
     };
+    const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function() {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
 </script>
 </body>
 
