@@ -1,21 +1,56 @@
-<?php
-include '../conexion.php';
-
-$username = $_POST['new-username'];
-$email = $_POST['email'];
-$password = password_hash($_POST['new-password'], PASSWORD_DEFAULT);
-
-$sql = "INSERT INTO usuarios (username, email, password) VALUES ('$username', '$email', '$password')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "<div style='text-align: center; margin-top: 50px;'>
-            <h2>Registro exitoso</h2>
-            <p>Tu registro se ha completado con éxito.</p>
-            <a href='../login/login.html' style='display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #333; color: #fff; text-decoration: none; border-radius: 5px;'>Iniciar Sesión</a>
-            </div>";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro</title>
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="./registro.css" />
+  <script src="https://kit.fontawesome.com/18d320874d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="/">Cyber Mind</a>
+      </div>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="../cursosPremium/cursos-premium.html">Cursos Premium</a></li>
+        <li class="nav-item"><a class="nav-link" href="../foros/foros.html">Foros</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Registrarse</h2>
+      <?php
+      include("conexion_registro.php");
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          include("controlador_registro.php");
+      }
+      ?>
+      <form action="registro.php" method="post">
+        <label for="new-username">Usuario:</label>
+        <input type="text" id="new-username" name="new-username" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="new-password">Contraseña:</label>
+        <input type="password" id="new-password" name="new-password" required>
+        <label for="confirm-password">Confirmar Contraseña:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <div class="form-buttons">
+          <button type="button" onclick="window.location.href='../index.html'">Cancelar</button>
+          <button type="submit" name="btn-register">Registrarse</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="/js/script.js"></script>
+  <script src="./registro.js"></script>
+</body>
+</html>
