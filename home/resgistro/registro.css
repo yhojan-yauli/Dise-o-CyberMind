@@ -212,3 +212,21 @@ button:hover {
     color: #155724;
     border: 1px solid #c3e6cb;
 }
+
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-container input {
+  width: 100%;
+  padding-right: 30px; /* Espacio para el icono */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+

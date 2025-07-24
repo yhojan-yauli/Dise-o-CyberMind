@@ -40,11 +40,21 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         <label for="new-password">Contraseña:</label>
-        <input type="password" id="new-password" name="new-password" required>
+
+        <div class="password-input-container">
+          <input type="password" id="new-password" name="new-password" required>
+          <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+        </div>
+
         <label for="confirm-password">Confirmar Contraseña:</label>
-        <input type="password" id="confirm-password" name="confirm-password" required>
+        <div class="password-input-container">
+          <input type="password" id="confirm-password" name="confirm-password" required>
+          <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
+        </div>
+
+        
         <div class="form-buttons">
-          <button type="button" onclick="window.location.href='../index.html'">Cancelar</button>
+          <button type="button" onclick="window.location.href='../login/login.php'">Iniciar Sesión</button>
           <button type="submit" name="btn-register">Registrarse</button>
         </div>
       </form>
@@ -52,5 +62,25 @@
   </main>
   <script src="/js/script.js"></script>
   <script src="./registro.js"></script>
+
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#new-password');
+
+    const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
+    const confirmPassword = document.querySelector('#confirm-password');
+
+    togglePassword.addEventListener('click', function() {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      this.classList.toggle('fa-eye-slash');
+    });
+
+    toggleConfirmPassword.addEventListener('click', function() {
+      const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+      confirmPassword.setAttribute('type', type);
+      this.classList.toggle('fa-eye-slash');
+    });
+  </script>
 </body>
 </html>
