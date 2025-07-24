@@ -1,4 +1,3 @@
-/* ========== ESTILOS GENERALES ========== */
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -10,7 +9,6 @@ body {
     color: white;
 }
 
-/* ========== HEADER ========== */
 header {
     background-color: #fffefe;
     color: #000;
@@ -50,7 +48,6 @@ header {
     text-decoration: underline;
 }
 
-/* ========== MAIN HOME (FULL BACKGROUND) ========== */
 .full-background {
     background-image: url('/home/imagenes/upscalemedia-transformed.jpeg');
     background-size: cover;
@@ -65,7 +62,6 @@ header {
     color: white;
 }
 
-/* ========== HOME CONTENT LAYOUT ========== */
 .home-container {
     display: flex;
     align-items: center;
@@ -119,7 +115,6 @@ header {
     background-color: #2980b9;
 }
 
-/* ========== FOOTER ========== */
 footer {
     background-color: #fffefe;
     color: #000;
@@ -149,7 +144,6 @@ footer {
     font-size: 1em;
 }
 
-/* Redes sociales con Font Awesome */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -168,7 +162,6 @@ footer {
     color: #0077b6;
 }
 
-/* Contenedor para los 4 puntos */
 .footer-columns {
     display: flex;
     justify-content: space-between;
@@ -192,7 +185,6 @@ footer {
     line-height: 1.4;
 }
 
-/* ========== RESPONSIVE FOOTER ========== */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
@@ -217,7 +209,6 @@ footer {
     }
 }
 
-/* ===== BOTÓN INICIAR SESIÓN ===== */
 .btn-login {
   padding: 6px 14px;
   border: 2px solid rgba(30, 30, 30, 0.01);
@@ -233,7 +224,6 @@ footer {
   color: white;
 }
 
-/* ===== BOTÓN REGISTRARSE ===== */
 .btn-register {
   padding: 6px 14px;
   border: 2px solid #1E1E1E;
@@ -247,4 +237,71 @@ footer {
 .btn-register:hover {
   background-color: #262626;
   border-color: #262626;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .home-container {
+        flex-direction: column;
+        padding: 0 10px;
+        gap: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 1.6em;
+        text-align: center;
+    }
+
+    .home-content p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .home-content {
+        text-align: center;
+    }
+
+    .home-image img {
+        max-width: 100%;
+    }
+
+    .start-button {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 1.4em;
+    }
+
+    .home-content p {
+        font-size: 0.95em;
+    }
+
+    .navbar-brand a {
+        font-size: 1.2em;
+    }
+
+    .start-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }

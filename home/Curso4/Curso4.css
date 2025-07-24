@@ -190,3 +190,72 @@ header {
     border: 1px solid #ddd;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .course-module {
+        padding: 20px;
+        max-height: none;
+    }
+
+    .nav-btn {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    .submit-btn, .next-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .quiz {
+        font-size: 15px;
+    }
+
+    .navbar-brand a {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-content {
+        padding: 10px;
+    }
+
+    .course-module {
+        padding: 15px;
+    }
+
+    .nav-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .submit-btn, .next-btn {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .navbar-brand a {
+        font-size: 1.1em;
+    }
+
+    .navbar-nav {
+        align-items: flex-start;
+    }
+}
