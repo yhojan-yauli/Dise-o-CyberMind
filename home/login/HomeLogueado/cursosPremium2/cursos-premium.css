@@ -99,7 +99,7 @@ header {
 }
 
 .full-background {
-  background-image: url('../imagenes/upscalemedia-transformed.jpeg');
+  background-image: url('/home/imagenes/upscalemedia-transformed.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
