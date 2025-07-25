@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #ffffff; /* fondo negro */
+    background: #ffffff;
     padding: 15px 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
@@ -26,15 +26,23 @@ body {
     font-weight: bold;
 }
 
+/* Contenedor derecho de navbar */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Enlaces */
 .nav-items {
     display: flex;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
 }
 
 .nav-items a {
     text-decoration: none;
-    color: #000000;
+    color: #000;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -43,12 +51,57 @@ body {
     color: #38bdf8;
 }
 
-.user-menu {
-    background: #102663;
+/* Botones */
+.user-button,
+.nav-button {
+    background-color: #444;
     color: white;
-    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.user-button {
     border-radius: 50%;
+    width: 35px;
+    height: 35px;
     font-weight: bold;
+    font-size: 1rem;
+}
+
+.nav-button {
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 1.2rem;
+}
+
+/* Dropdowns */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
 }
 
 /* Layout principal */
@@ -175,6 +228,7 @@ body {
     margin-bottom: 3px;
 }
 
+/* Login */
 .btn-login {
     border: 2px solid rgba(30, 30, 30, 0.01);
     background-color: rgba(30, 30, 30, 0.69);
@@ -188,4 +242,102 @@ body {
 
 .btn-login:hover {
     background-color: rgba(53, 53, 53, 0.69);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .nav-items {
+        display: none;
+    }
+
+    .perfil-contenedor {
+        flex-direction: column;
+        padding: 20px 15px;
+    }
+
+    .cursos,
+    .perfil-lateral {
+        width: 100%;
+    }
+
+    .curso {
+        padding: 15px;
+    }
+
+    .curso button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .btn-mas {
+        width: 100%;
+        text-align: center;
+    }
+
+    .perfil-box {
+        padding: 15px;
+    }
+
+    .scroll-insignias {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .insignia {
+        width: 60px;
+        height: 60px;
+        font-size: 10px;
+    }
+
+    .foto {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+    }
+
+    .dropdown-content {
+        right: 0;
+        left: auto;
+        min-width: 140px;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-items {
+    display: none; /* Ocultar los enlaces en móvil */
+  }
+
+  .nav-button {
+    display: inline-block;
+  }
+
+  .brand {
+    font-size: 22px;
+    color: #000;
+  }
 }

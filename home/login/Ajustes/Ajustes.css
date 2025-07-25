@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -8,6 +12,7 @@ body {
   color: #222;
   min-height: 100vh;
   background-color: #0a1f44;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -16,6 +21,7 @@ body {
   align-items: center;
   background: #fff;
   padding: 15px 40px;
+  flex-wrap: wrap;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -29,6 +35,7 @@ body {
   display: flex;
   gap: 20px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-items a {
@@ -60,29 +67,32 @@ body {
   justify-content: center;
   align-items: flex-start;
   min-height: 90vh;
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 
 .ajustes-card {
   background: rgba(255,255,255,0.85);
   border-radius: 12px;
-  padding: 40px 40px 30px 40px;
+  padding: 40px;
   max-width: 900px;
-  width: 90%;
+  width: 100%;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 .ajustes-card h1 {
   margin-top: 0;
   color: #333;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .ajustes-content {
   display: flex;
   gap: 40px;
   margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .ajustes-info {
@@ -90,6 +100,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  min-width: 280px;
 }
 
 .ajustes-info h2 {
@@ -100,6 +111,7 @@ body {
 
 .campo {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin-bottom: 8px;
@@ -121,6 +133,7 @@ body {
   background: #f5f5f5;
   color: #222;
   outline: none;
+  flex: 1;
 }
 
 .campo input[readonly] {
@@ -146,6 +159,7 @@ body {
 
 .perfil-foto {
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .foto-circulo {
@@ -170,7 +184,6 @@ body {
   font-size: 1rem;
   border: none;
   transition: background 0.2s;
-  margin-left: 0;
   display: inline-block;
 }
 
@@ -184,24 +197,68 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 200px;
 }
 
 .ajustes-icono svg {
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border: 2px solid #4d9fff;
   border-radius: 8px;
   background: transparent;
-  box-sizing: border-box;
 }
 
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .ajustes-content {
     flex-direction: column;
     align-items: center;
   }
 
+  .ajustes-card {
+    padding: 30px 20px;
+  }
+
   .ajustes-icono {
-    margin-top: 30px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .ajustes-card h1 {
+    font-size: 1.8rem;
+  }
+
+  .ajustes-icono svg {
+    width: 120px;
+    height: 120px;
+  }
+
+  .campo label {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .campo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-button {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
   }
 }

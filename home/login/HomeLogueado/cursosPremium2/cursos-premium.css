@@ -1,3 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -26,6 +35,7 @@ header {
   color: #000;
   text-decoration: none;
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .navbar-nav {
@@ -33,15 +43,17 @@ header {
   display: flex;
   margin: 0;
   padding: 0;
+  gap: 20px;
 }
 
 .nav-item {
-  margin-left: 20px;
+  margin-left: 0;
 }
 
 .nav-link {
   color: #000;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .nav-link:hover {
@@ -75,6 +87,8 @@ header {
   border-radius: 6px;
   font-weight: bold;
   transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
 }
 
 .btn-login {
@@ -110,38 +124,18 @@ header {
   justify-content: center;
   text-align: center;
   color: white;
+  flex-direction: column;
 }
 
-.premium-section {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 40px;
-  border-radius: 12px;
-  max-width: 800px;
-}
-
-.premium-section h2 {
-  font-size: 2em;
+.full-background h1 {
+  font-size: 2rem;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.premium-section p {
-  font-size: 1.2em;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-footer {
-  background-color: #fffefe;
-  color: #000;
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 0.9em;
 }
 
 .courses-container {
   display: flex;
-  overflow-x: auto;
   gap: 20px;
+  overflow-x: auto;
   padding: 10px;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -154,12 +148,12 @@ footer {
 .course {
   background: linear-gradient(to bottom, #ffffff, #d0eaff);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   width: 280px;
-  height: 450%;
   flex-shrink: 0;
   color: #333;
+  text-align: left;
 }
 
 .course img {
@@ -175,6 +169,10 @@ footer {
   color: #000;
 }
 
+.course p {
+  font-size: 0.95em;
+}
+
 .buy-button {
   background-color: rgba(0, 180, 212, 1);
   color: white;
@@ -185,27 +183,38 @@ footer {
   font-weight: bold;
   transition: all 0.3s ease;
   margin-top: 10px;
-  text-align: center;
-  border: none; /* ← eliminación del borde como pediste */
+  border: none;
+  width: 100%;
 }
 
 .buy-button:hover {
   background-color: #009ec2;
 }
 
-/* RESPONSIVE PARA MÓVILES */
+footer {
+  background-color: #fffefe;
+  color: #000;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9em;
+}
+
+/* ----------- RESPONSIVE ----------- */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+  }
+
+  .navbar-brand {
+    flex-grow: 1;
   }
 
   .mobile-icons {
     display: flex;
+    gap: 10px;
     align-items: center;
-    gap: 6px;
     margin-left: auto;
     order: 2;
   }
@@ -213,23 +222,24 @@ footer {
   .hamburger,
   .user-icon {
     display: block;
-    font-size: 1.6em;
+    color: #000;
+    font-size: 1.6rem;
     cursor: pointer;
   }
 
   .auth-mobile,
   .navbar-nav {
     display: none;
-    flex-direction: column;
     position: absolute;
     top: 100%;
-    right: 0;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    right: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
     width: 200px;
+    border-radius: 8px;
     padding: 10px 0;
-    z-index: 10;
+    z-index: 100;
   }
 
   #menu-toggle:checked ~ .mobile-icons + .auth-mobile + .navbar-nav {
@@ -244,47 +254,37 @@ footer {
     padding: 12px 20px;
     color: #000;
     text-align: left;
-    width: 100%;
-    display: block;
-    border-bottom: 1px solid #eee;
-    font-weight: 500;
+    border-bottom: 1px solid #ddd;
   }
 
   .nav-link:last-child {
     border-bottom: none;
   }
 
-  .nav-link:hover {
-    background-color: #f5f5f5;
+  .btn-login,
+  .btn-register {
+    margin: 5px 20px;
   }
 
-  .navbar-auth-desktop {
-    display: none;
+  .full-background {
+    padding: 40px 10px;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
-  .premium-section {
-    padding: 30px 20px;
-  }
-
-  .premium-section h2 {
+  .full-background h1 {
     font-size: 1.5em;
   }
 
-  .premium-section p {
-    font-size: 1em;
-  }
-
-  /* ← diseño vertical solo en móvil */
   .courses-container {
     flex-direction: column;
+    overflow-x: hidden;
     align-items: center;
-    overflow-x: visible;
-    padding: 20px;
   }
 
   .course {
     width: 90%;
-    max-width: 300px;
+    max-width: 320px;
     height: auto;
     margin-bottom: 20px;
   }
@@ -300,11 +300,15 @@ footer {
     font-size: 1.2em;
   }
 
-  .premium-section h2 {
-    font-size: 1.3em;
+  .full-background h1 {
+    font-size: 1.2em;
   }
 
-  .premium-section p {
-    font-size: 0.95em;
+  .course h2 {
+    font-size: 1.1em;
+  }
+
+  .course p {
+    font-size: 0.9em;
   }
 }
