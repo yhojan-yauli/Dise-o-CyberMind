@@ -1,91 +1,247 @@
-// Función para cargar comentarios
-function cargarComentarios() {
-  fetch('obtener_comentarios.php')
-    .then(response => response.json())
-    .then(comentarios => {
-      const contenedorComentarios = document.getElementById('contenedor-comentarios');
-      contenedorComentarios.innerHTML = '';
-      comentarios.forEach(comentario => {
-        const comentarioElemento = document.createElement('div');
-        comentarioElemento.classList.add('foro-comment');
-        comentarioElemento.innerHTML = `
-          <i class="fas fa-user-circle fa-2x"></i>
-          <div class="content">
-            <strong>${comentario.usuario}:</strong> ${comentario.contenido}
-          </div>
-        `;
-        contenedorComentarios.appendChild(comentarioElemento);
+document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('comentario-modal');
+      const btnAgregarComentario = document.querySelector('.btn-agregar-comentario');
+      const btnCancelar = document.getElementById('cancelar-btn');
+      const closeBtn = document.querySelector('.close');
+      const form = document.getElementById('comentario-form');
+
+      // Abrir modal al hacer clic en "Agregar comentario"
+      btnAgregarComentario.addEventListener('click', () => {
+        modal.style.display = 'block';
       });
-    });
-}
 
-// Función para enviar un comentario desde el modal
-function enviarComentario() {
-  const asunto = document.getElementById('asunto').value.trim();
-  const descripcion = document.getElementById('descripcion').value.trim();
+      // Cerrar modal al hacer clic en "Cancelar" o en la "X"
+      btnCancelar.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
 
-  if (asunto === '' || descripcion === '') {
-    alert('Por favor completa ambos campos.');
-    return;
-  }
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
 
-  fetch('guardar_comentario.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: `usuario=${encodeURIComponent(asunto)}&contenido=${encodeURIComponent(descripcion)}`
-  })
-  .then(response => response.text())
-  .then(data => {
-    console.log(data);
-    document.getElementById('comentario-modal').style.display = 'none';
-    document.getElementById('asunto').value = '';
-    document.getElementById('descripcion').value = '';
-    cargarComentarios();
-  });
-}
+      // Cerrar modal al hacer clic fuera del contenido del modal
+      window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
 
-// Al cargar todo el DOM
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById("comentario-modal");
-  const abrirBtn = document.querySelector(".btn-agregar-comentario");
-  const cancelarBtn = document.getElementById("cancelar-btn");
-  const subirBtn = document.getElementById("subir-btn");
+      // Manejar el envío del formulario
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-  if (abrirBtn && cancelarBtn && subirBtn && modal) {
-    abrirBtn.addEventListener("click", () => {
-      modal.style.display = "block";
-    });
+        const formData = new FormData(form);
 
-    cancelarBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
+        fetch('guardar_comentario.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+          alert(data);
+          modal.style.display = 'none';
+          form.reset();
+          cargarComentarios();
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Error al guardar el comentario. Por favor, inténtalo de nuevo más tarde.');
+        });
+      });
 
-    subirBtn.addEventListener("click", enviarComentario);
+      // Función para cargar comentarios desde la base de datos
+      function cargarComentarios() {
+        fetch('obtener_comentario.php')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Error en la respuesta de la red');
+            }
+            return response.json();
+          })
+          .then(data => {
+            const contenedorComentarios = document.getElementById('contenedor-comentarios');
+            contenedorComentarios.innerHTML = '';
 
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
+            if (data.error) {
+              // Mostrar mensaje de error específico
+              contenedorComentarios.innerHTML = `<p>Error: ${data.error}</p>`;
+            } else if (data.mensaje) {
+              // Mostrar mensaje si no hay comentarios
+              contenedorComentarios.innerHTML = `<p>${data.mensaje}</p>`;
+            } else {
+              // Mostrar comentarios si los hay
+              data.forEach((comentario, index) => {
+                const comentarioDiv = document.createElement('div');
+                comentarioDiv.className = 'foro-comment';
+                comentarioDiv.innerHTML = `
+                  <i class="fas fa-user-circle fa-2x"></i>
+                  <div class="content">
+                    <strong>Comentario ${index + 1}:</strong> ${comentario.asunto}<br>
+                    ${comentario.descripcion}
+                  </div>
+                `;
+                contenedorComentarios.appendChild(comentarioDiv);
+              });
+            }
+          })
+          .catch(error => {
+            console.error('Error al cargar comentarios:', error);
+            document.getElementById('contenedor-comentarios').innerHTML = '<p>Error al cargar los comentarios. Por favor, inténtalo de nuevo más tarde.</p>';
+          });
       }
+
+      // Cargar comentarios al inicio
+      cargarComentarios();
     });
+
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('faq-modal');
+  const modalQuestion = document.getElementById('modal-question');
+  const modalAnswer = document.getElementById('modal-answer');
+  const closeBtn = document.querySelector('.close');
+  const deAcuerdoBtn = document.getElementById('de-acuerdo-btn');
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+      const questionText = this.getAttribute('data-question');
+      const answerText = this.getAttribute('data-answer');
+
+      modalQuestion.textContent = questionText;
+      modalAnswer.textContent = answerText;
+
+      modal.style.display = 'block';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  deAcuerdoBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchButton = document.getElementById('search-button');
+  const contenedorComentarios = document.getElementById('contenedor-comentarios');
+
+  // Función para cargar comentarios desde la base de datos
+  function cargarComentarios() {
+    fetch('obtener_comentarios.php')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error en la respuesta de la red');
+        }
+        return response.json();
+      })
+      .then(data => {
+        contenedorComentarios.innerHTML = '';
+
+        if (data.error) {
+          contenedorComentarios.innerHTML = `<p>Error: ${data.error}</p>`;
+        } else if (data.mensaje) {
+          contenedorComentarios.innerHTML = `<p>${data.mensaje}</p>`;
+        } else {
+          data.forEach((comentario) => {
+            const comentarioDiv = document.createElement('div');
+            comentarioDiv.className = 'foro-comment';
+            comentarioDiv.innerHTML = `
+              <i class="fas fa-user-circle fa-2x"></i>
+              <div class="content">
+                <strong>Comentario ID: ${comentario.id}</strong><br>
+                <strong>Asunto:</strong> ${comentario.asunto}<br>
+                ${comentario.descripcion}
+              </div>
+            `;
+            contenedorComentarios.appendChild(comentarioDiv);
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error al cargar comentarios:', error);
+        contenedorComentarios.innerHTML = '<p>Error al cargar los comentarios. Por favor, inténtalo de nuevo más tarde.</p>';
+      });
   }
 
+  // Función para buscar comentarios
+  function buscarComentarios() {
+    const searchTerm = searchInput.value.trim();
+
+    if (searchTerm === '') {
+      cargarComentarios();
+      return;
+    }
+
+    fetch(`buscar_comentarios.php?search=${encodeURIComponent(searchTerm)}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error en la respuesta de la red');
+        }
+        return response.json();
+      })
+      .then(data => {
+        contenedorComentarios.innerHTML = '';
+
+        if (data.error) {
+          contenedorComentarios.innerHTML = `<p>Error: ${data.error}</p>`;
+        } else if (data.mensaje) {
+          contenedorComentarios.innerHTML = `<p>${data.mensaje}</p>`;
+        } else {
+          data.forEach((comentario) => {
+            const comentarioDiv = document.createElement('div');
+            comentarioDiv.className = 'foro-comment';
+            comentarioDiv.innerHTML = `
+              <i class="fas fa-user-circle fa-2x"></i>
+              <div class="content">
+                <strong>Comentario ID: ${comentario.id}</strong><br>
+                <strong>Asunto:</strong> ${comentario.asunto}<br>
+                ${comentario.descripcion}
+              </div>
+            `;
+            contenedorComentarios.appendChild(comentarioDiv);
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error al buscar comentarios:', error);
+        contenedorComentarios.innerHTML = '<p>Error al buscar los comentarios. Por favor, inténtalo de nuevo más tarde.</p>';
+      });
+  }
+
+  // Event listeners
+  searchButton.addEventListener('click', buscarComentarios);
+
+  searchInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      buscarComentarios();
+    }
+  });
+
+  // Cargar comentarios al inicio
   cargarComentarios();
-
-  // Funcionalidad para abrir y cerrar respuestas de preguntas frecuentes
-  const preguntas = document.querySelectorAll(".faq-question");
-
-  preguntas.forEach(pregunta => {
-    pregunta.addEventListener("click", () => {
-      const respuesta = pregunta.nextElementSibling;
-
-      const yaVisible = respuesta.style.display === "block";
-      document.querySelectorAll(".faq-answer").forEach(r => r.style.display = "none");
-
-      if (!yaVisible) {
-        respuesta.style.display = "block";
-      }
-    });
-  });
 });

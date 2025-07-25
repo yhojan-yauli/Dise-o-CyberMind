@@ -2,48 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foros</title>
-  <link rel="stylesheet" href="../foros/foros.css" />
-  <script src="https://kit.fontawesome.com/18d320874d.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./foros.css" />
 </head>
-
-<div id="comentario-modal" class="modal">
-  <div class="modal-content">
-    <h3>Nuevo Comentario Anónimo</h3>
-    <label for="asunto">Asunto:</label>
-    <input type="text" id="asunto" placeholder="Escribe el asunto" />
-    
-    <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" placeholder="Escribe tu comentario..."></textarea>
-
-    <div class="modal-buttons">
-      <button id="cancelar-btn" class="btn-cancelar">Cancelar</button>
-      <button id="subir-btn" class="btn-subir">Subir</button>
-    </div>
-  </div>
-</div>
-
 <body>
   <header>
     <nav class="navbar">
       <div class="navbar-brand">
         <a href="/">Cyber Mind</a>
       </div>
-
       <input type="checkbox" id="user-toggle" />
       <input type="checkbox" id="menu-toggle" />
-
       <div class="mobile-icons">
         <label for="user-toggle" class="user-icon"><i class="fas fa-user"></i></label>
         <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
       </div>
-
       <div class="auth-mobile">
         <a class="btn-login" href="../login/login.php">Iniciar Sesión</a>
         <a class="btn-register" href="../resgistro/registro.php">Registrarse</a>
       </div>
-
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="../cursosPremium/cursos-premium.html">Cursos Premium</a></li>
@@ -54,80 +33,106 @@
     </nav>
   </header>
 
+  <!-- Modal para agregar comentarios -->
+  <div id="comentario-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Nuevo Comentario Anónimo</h3>
+      <form id="comentario-form" action="guardar_comentario.php" method="post">
+        <label for="asunto">Asunto:</label>
+        <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto" required>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" placeholder="Escribe tu comentario..." required></textarea>
+        <div class="modal-buttons">
+          <button type="button" id="cancelar-btn" class="btn-cancelar">Cancelar</button>
+          <button type="submit" id="subir-btn" class="btn-subir">Subir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <main class="foro-wrapper full-background">
     <div class="foro-container">
       <h2 class="foro-title">¿Tienes alguna duda?</h2>
-
       <div class="foro-search">
         <input type="text" placeholder="Buscar" />
         <button>Buscar</button>
       </div>
-
       <div class="foro-content">
-        
-        <!-- Sección izquierda: Comentarios -->
         <div class="foro-left">
-            <div class="foro-filter-wrapper">
-  <div class="foro-filter">
-    <span>Buscar por:</span>
-    <a href="#">Más reciente</a> |
-    <a href="#">Más antiguo</a>
-  </div>
-  <button class="btn-agregar-comentario">Agregar comentario</button>
-</div>
-
+          <div class="foro-filter-wrapper">
+            <div class="foro-filter">
+              <span>Buscar por:</span>
+              <a href="#">Más reciente</a> |
+              <a href="#">Más antiguo</a>
+            </div>
+            <button class="btn-agregar-comentario">Agregar comentario</button>
+          </div>
           <div id="contenedor-comentarios">
             <!-- Comentarios reales sobre problemas y soluciones -->
-            <div class="foro-comment">
-              <i class="fas fa-user-circle fa-2x"></i>
-              <div class="content">
-                <strong>Ana Torres:</strong> Me hackearon una cuenta por usar la misma contraseña en todas partes. Aprendí sobre gestores de contraseñas en un curso y ahora uso contraseñas únicas y seguras.
-              </div>
-            </div>
-
-            <div class="foro-comment">
-              <i class="fas fa-user-circle fa-2x"></i>
-              <div class="content">
-                <strong>Carlos M.:</strong> Casi caigo en un correo phishing que decía ser de mi banco. Revisé el dominio y me di cuenta que era falso. Ahora siempre verifico antes de hacer clic.
-              </div>
-            </div>
-
-            <div class="foro-comment">
-              <i class="fas fa-user-circle fa-2x"></i>
-              <div class="content">
-                <strong>Lucía V:</strong> Instalé un antivirus gratuito que resultó ser malware. Gracias a un foro aquí aprendí a identificar software legítimo y ahora solo descargo desde fuentes oficiales.
-              </div>
-            </div>
+            
           </div>
-
           <div class="foro-pagination">
             <button>1</button>
             <button>2</button>
             <span>...</span>
           </div>
         </div>
+        
+<!-- Modal para preguntas frecuentes -->
+<div id="faq-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modal-question"></h3>
+    <p id="modal-answer"></p>
+    <button id="de-acuerdo-btn" class="btn-de-acuerdo">De acuerdo</button>
+  </div>
+</div>
 
-        <div class="foro-right">
-          <h3>Preguntas frecuentes</h3>
-<ul class="faq-list">
-  <li class="faq-item">
-    <span class="faq-question">¿Cómo matricularme en un curso?</span>
-    <div class="faq-answer">Debes iniciar sesión, ir a la sección de cursos y hacer clic en "Comprar" o "Matricular".</div>
-  </li>
-  <li class="faq-item">
-    <span class="faq-question">¿Necesito conocimientos previos para empezar un curso?</span>
-    <div class="faq-answer">No. Los cursos están diseñados para principiantes, pero cada curso indica el nivel recomendado.</div>
-  </li>
-  <li class="faq-item">
-    <span class="faq-question">¿Cuánto tiempo tengo para completar un curso?</span>
-    <div class="faq-answer">Tienes acceso ilimitado. Puedes completarlo a tu ritmo.</div>
-  </li>
-  <li class="faq-item">
-    <span class="faq-question">¿Puedo acceder a los cursos desde cualquier país?</span>
-    <div class="faq-answer">Sí. Solo necesitas conexión a Internet. La plataforma es global.</div>
-  </li>
-</ul>
-        </div>
+<div class="foro-right">
+  <h3>Preguntas frecuentes</h3>
+  <ul class="faq-list">
+    <li class="faq-item">
+      <span class="faq-question" data-question="¿Cómo matricularme en un curso?" data-answer="Debes iniciar sesión, ir a la sección de cursos y hacer clic en 'Comprar' o 'Matricular'.">
+        ¿Cómo matricularme en un curso?
+      </span>
+    </li>
+    <li class="faq-item">
+      <span class="faq-question" data-question="¿Necesito conocimientos previos para empezar un curso?" data-answer="No. Los cursos están diseñados para principiantes, pero cada curso indica el nivel recomendado.">
+        ¿Necesito conocimientos previos para empezar un curso?
+      </span>
+    </li>
+    <li class="faq-item">
+      <span class="faq-question" data-question="¿Cuánto tiempo tengo para completar un curso?" data-answer="Tienes acceso ilimitado. Puedes completarlo a tu ritmo.">
+        ¿Cuánto tiempo tengo para completar un curso?
+      </span>
+    </li>
+    <li class="faq-item">
+      <span class="faq-question" data-question="¿Puedo acceder a los cursos desde cualquier país?" data-answer="Sí. Solo necesitas conexión a Internet. La plataforma es global.">
+        ¿Puedo acceder a los cursos desde cualquier país?
+      </span>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
     </div>
   </main>

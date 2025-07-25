@@ -9,7 +9,15 @@ try {
         throw new Exception("Conexión fallida: " . $conexion->connect_error);
     }
 
-    $sql = "SELECT * FROM comentarios ORDER BY fecha_publicacion DESC";
+    $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
+
+    if (empty($searchTerm)) {
+        echo json_encode(["mensaje" => "No se proporcionó un término de búsqueda."]);
+        exit;
+    }
+
+    $searchTerm = $conexion->real_escape_string($searchTerm);
+    $sql = "SELECT * FROM comentarios WHERE asunto LIKE '%$searchTerm%' OR descripcion LIKE '%$searchTerm%'";
     $result = $conexion->query($sql);
 
     $comentarios = array();
@@ -20,7 +28,7 @@ try {
         }
         echo json_encode($comentarios);
     } else {
-        echo json_encode(["mensaje" => "No se encontraron comentarios."]);
+        echo json_encode(["mensaje" => "No se encontraron comentarios que coincidan con la búsqueda."]);
     }
 
     $conexion->close();
