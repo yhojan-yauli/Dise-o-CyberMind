@@ -5,7 +5,7 @@ if(!empty($_POST["btn-login"]) )
     } else {
         $usuario = $_POST["user"];
         $clave = $_POST["pass"];
-        $sql=$conexion->query("SELECT * FROM usuarios WHERE username='$usuario' AND password='$clave'");
+        $sql=$conexion->query("SELECT * FROM usuarios WHERE email='$usuario' AND password='$clave'");
         if($datos=$sql->fetch_object()) {
             header("Location:HomeLogueado.html");
         } else {
