@@ -327,6 +327,7 @@ footer {
   background-color: rgba(255, 255, 255, 0.15);
   padding: 15px;
   border-radius: 10px;
+  margin-bottom: 15px;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -498,4 +499,52 @@ footer {
 
 .btn-subir:hover {
   background-color: #2a53b3;
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.faq-question {
+  display: block;
+  padding: 10px 12px;
+  background-color: transparent;
+  color: #000;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.faq-question:hover {
+  background-color: transparent;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px 12px;
+  background-color: transparent;
+  border-radius: 6px;
+  margin-top: 6px;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.foro-content {
+  align-items: stretch;
+}
+
+.foro-left, .foro-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.foro-left {
+  justify-content: space-between;
 }

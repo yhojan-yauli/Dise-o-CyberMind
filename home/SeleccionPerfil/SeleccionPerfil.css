@@ -42,7 +42,7 @@ body {
 }
 
 .course-card button {
-  background-color: #00B4D8;
+  background-color: hsl(190, 100%, 42%);
   color: white;
   border: none;
   padding: 10px 15px;

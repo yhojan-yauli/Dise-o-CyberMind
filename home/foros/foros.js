@@ -46,7 +46,7 @@ function enviarComentario() {
   });
 }
 
-// Control del modal
+// Al cargar todo el DOM
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById("comentario-modal");
   const abrirBtn = document.querySelector(".btn-agregar-comentario");
@@ -72,4 +72,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   cargarComentarios();
+
+  // Funcionalidad para abrir y cerrar respuestas de preguntas frecuentes
+  const preguntas = document.querySelectorAll(".faq-question");
+
+  preguntas.forEach(pregunta => {
+    pregunta.addEventListener("click", () => {
+      const respuesta = pregunta.nextElementSibling;
+
+      const yaVisible = respuesta.style.display === "block";
+      document.querySelectorAll(".faq-answer").forEach(r => r.style.display = "none");
+
+      if (!yaVisible) {
+        respuesta.style.display = "block";
+      }
+    });
+  });
 });
