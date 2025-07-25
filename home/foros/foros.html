@@ -34,10 +34,16 @@
     </nav>
   </header>
 
-  <main class="full-background">
+   <main class="full-background">
     <section class="premium-section">
       <h2>Foros</h2>
       <p>Participa en nuestras discusiones sobre ciberseguridad, comparte ideas, resuelve dudas y aprende con la comunidad.</p>
+      <div id="contenedor-comentarios"></div>
+      <form id="formulario-comentario">
+        <input type="text" id="usuario" placeholder="Usuario" required>
+        <textarea id="contenido" placeholder="Comentario" required></textarea>
+        <button type="button" onclick="enviarComentario()">Enviar Comentario</button>
+      </form>
     </section>
   </main>
 
@@ -45,6 +51,6 @@
     <p>© 2023 Cyber Mind - Todos los derechos reservados.</p>
   </footer>
 
-  <script src="/js/script.js"></script>
+  <script src="./foros.js"></script>
 </body>
 </html>

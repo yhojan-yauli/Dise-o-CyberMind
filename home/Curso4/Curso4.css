@@ -308,3 +308,43 @@ header {
         padding: 5px;
     }
 }
+
+
+
+
+
+.login-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 20px auto;
+            display: block;
+            width: 200px;
+        }
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+
+        .discount-image {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        
+
+                /* Estilo para las imágenes de los cursos */
+        .discount-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+

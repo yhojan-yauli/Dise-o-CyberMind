@@ -218,3 +218,87 @@ footer {
     font-size: 0.95em;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Contenedor de cursos con desplazamiento horizontal */
+        .courses-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px;
+            scrollbar-width: none; /* Oculta la barra de desplazamiento en Firefox */
+            -ms-overflow-style: none; /* Oculta la barra de desplazamiento en IE y Edge */
+        }
+
+        /* Oculta la barra de desplazamiento en navegadores basados en WebKit */
+        .courses-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Estilo para cada tarjeta de curso */
+        .course {
+
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            width: 280px; /* Ancho de la tarjeta */
+            height: 450%; /* Altura de la tarjeta */
+            flex-shrink: 0;
+            color: #333;
+        }
+
+        /* Estilo para las imágenes de los cursos */
+        .course img {
+            width: 100%;
+            height: 180px; /* Altura de la imagen */
+            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+            border-radius: 5px;
+        }
+
+        /* Estilo para los títulos de los cursos */
+        .course h2 {
+            margin-top: 10px;
+            font-size: 1.3em;
+            color: #000; /* Tamaño de fuente del título */
+        }
+
+        /* Estilo para los botones de compra */
+        .buy-button {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            position: center;
+
+            
+        }
+
+        /* Efecto hover para los botones de compra */
+        .buy-button:hover {
+            background-color: #45a049;
+        }
