@@ -7,6 +7,23 @@
   <link rel="stylesheet" href="../foros/foros.css" />
   <script src="https://kit.fontawesome.com/18d320874d.js" crossorigin="anonymous"></script>
 </head>
+
+<div id="comentario-modal" class="modal">
+  <div class="modal-content">
+    <h3>Nuevo Comentario Anónimo</h3>
+    <label for="asunto">Asunto:</label>
+    <input type="text" id="asunto" placeholder="Escribe el asunto" />
+    
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" placeholder="Escribe tu comentario..."></textarea>
+
+    <div class="modal-buttons">
+      <button id="cancelar-btn" class="btn-cancelar">Cancelar</button>
+      <button id="subir-btn" class="btn-subir">Subir</button>
+    </div>
+  </div>
+</div>
+
 <body>
   <header>
     <nav class="navbar">
@@ -49,11 +66,14 @@
       <div class="foro-content">
         <!-- Sección izquierda: Comentarios -->
         <div class="foro-left">
-          <div class="foro-filter">
-            <span>Buscar por:</span>
-            <a href="#">Más reciente</a> |
-            <a href="#">Más antiguo</a>
-          </div>
+            <div class="foro-filter-wrapper">
+  <div class="foro-filter">
+    <span>Buscar por:</span>
+    <a href="#">Más reciente</a> |
+    <a href="#">Más antiguo</a>
+  </div>
+  <button class="btn-agregar-comentario">Agregar comentario</button>
+</div>
 
           <div id="contenedor-comentarios">
             <!-- Comentarios reales sobre problemas y soluciones -->
