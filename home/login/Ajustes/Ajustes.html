@@ -4,19 +4,72 @@
   <meta charset="UTF-8">
   <title>Ajustes de Cuenta</title>
   <link rel="stylesheet" href="./Ajustes.css">
+  <style>
+    .user-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .user-button {
+      background-color: #102663;
+      color: white;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 150px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
     <div class="brand">Cyber Mind</div>
     <div class="nav-items">
-      <a href="../HomeLogueado.html">Home</a>
+      <a href="/home/login/HomeLogueado/HomeLogueado.html">Home</a>
       <a href="/home/foros/foros.html">Foro</a>
       <a href="#">Chat</a>
       <div class="user-dropdown">
-        <button class="user-button">L</button>
+        <button class="user-button" onclick="toggleDropdown()">M</button>
+        <div class="dropdown-content" id="userMenu">
+          <a href="/home/login/HomeLogueado/HomeLogueado.html">Perfil</a>
+          <a href="/home/">Cursos</a>
+          <a href="/home/login/Ajustes/Ajustes.html">Ajustes</a>
+          <a href="/home/index.html">Cerrar sesión</a>
+        </div>
       </div>
     </div>
   </nav>
+
   <main class="ajustes-main">
     <section class="ajustes-card">
       <h1>Ajustes de Cuenta</h1>
@@ -39,7 +92,7 @@
           </div>
           <h2>Foto de perfil</h2>
           <div class="campo perfil-foto">
-            <span class="foto-circulo">L</span>
+            <span class="foto-circulo">M</span>
             <input type="file" id="foto" style="display:none;">
             <label for="foto" class="btn-archivo">Seleccionar archivo</label>
           </div>
@@ -63,5 +116,23 @@
       </div>
     </section>
   </main>
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById("userMenu").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.user-button')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
 </body>
 </html>
