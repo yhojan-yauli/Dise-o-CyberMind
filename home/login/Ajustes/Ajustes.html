@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajustes de Cuenta</title>
+  <link rel="stylesheet" href="./Ajustes.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">Cyber Mind</div>
+    <div class="nav-items">
+      <a href="../HomeLogueado.html">Home</a>
+      <a href="/home/foros/foros.html">Foro</a>
+      <a href="#">Chat</a>
+      <div class="user-dropdown">
+        <button class="user-button">L</button>
+      </div>
+    </div>
+  </nav>
+  <main class="ajustes-main">
+    <section class="ajustes-card">
+      <h1>Ajustes de Cuenta</h1>
+      <div class="ajustes-content">
+        <div class="ajustes-info">
+          <h2>Información personal</h2>
+          <div class="campo">
+            <label>Email:</label>
+            <input type="email" value="rafael.gomez@formatec.mx" readonly>
+            <button>Editar</button>
+          </div>
+          <div class="campo">
+            <label>País:</label>
+            <select>
+              <option>México</option>
+              <option>España</option>
+              <option>Argentina</option>
+              <!-- Más países -->
+            </select>
+          </div>
+          <h2>Foto de perfil</h2>
+          <div class="campo perfil-foto">
+            <span class="foto-circulo">L</span>
+            <input type="file" id="foto" style="display:none;">
+            <label for="foto" class="btn-archivo">Seleccionar archivo</label>
+          </div>
+          <h2>Seguridad</h2>
+          <div class="campo">
+            <label>Contraseña:</label>
+            <input type="password" value="************" readonly>
+            <button>Editar</button>
+          </div>
+        </div>
+        <div class="ajustes-icono">
+          <svg width="180" height="180" viewBox="0 0 180 180">
+            <rect x="0" y="0" width="180" height="180" fill="none" stroke="#4d9fff" stroke-width="2"/>
+            <g>
+              <path d="M90 50a40 40 0 1 1 0 80a40 40 0 1 1 0-80zm0-30v20m0 100v20m-40-90l-14-14m108 108l-14-14m-90 40h20m100 0h20m-90-40l-14 14m108-108l-14 14" fill="none" stroke="black" stroke-width="0"/>
+              <path d="M90 60a30 30 0 1 0 0 60a30 30 0 1 0 0-60zm0-40c-4 0-8 2-10 6l-8 14a8 8 0 0 1-7 4l-16 2c-4 0-7 3-7 7l-2 16a8 8 0 0 1-4 7l-14 8c-4 2-6 6-6 10s2 8 6 10l14 8a8 8 0 0 1 4 7l2 16c0 4 3 7 7 7l16 2a8 8 0 0 1 7 4l8 14c2 4 6 6 10 6s8-2 10-6l8-14a8 8 0 0 1 7-4l16-2c4 0 7-3 7-7l2-16a8 8 0 0 1 4-7l14-8c4-2 6-6 6-10s-2-8-6-10l-14-8a8 8 0 0 1-4-7l-2-16c0-4-3-7-7-7l-16-2a8 8 0 0 1-7-4l-8-14c-2-4-6-6-10-6z" fill="black"/>
+              <circle cx="90" cy="90" r="25" fill="white"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
