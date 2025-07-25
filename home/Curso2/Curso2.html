@@ -46,7 +46,7 @@
     <main class="course-content">
         <div id="module1" class="course-module">
             <h2><i class="fas fa-home"></i> Módulo 1: Bienvenida</h2>
-            <p>¡Hola y bienvenido/a! Este curso está diseñado para estudiantes que desean adquirir conocimientos básicos de ciberseguridad sin complicaciones técnicas. A lo largo de estos 12 módulos, encontrarás una variedad de recursos, incluyendo juegos, retos y videos animados, que te ayudarán a entender cómo proteger tu información, reconocer fraudes y mantener tus cuentas seguras. ¡Disfruta aprendiendo y conviértete en un usuario digital seguro!</p>
+            <p>¡Hola y bienvenido/a! Este curso está diseñado para <strong>estudiantes que desean adquirir conocimientos básicos de ciberseguridad sin complicaciones técnicas</strong>. A lo largo de estos 12 módulos encontrarás una variedad de recursos, como videos explicativos, imágenes ilustrativas y mini cuestionarios, que te ayudarán a comprender cómo proteger tu información, reconocer fraudes y mantener tus cuentas seguras. ¡Disfruta aprendiendo y conviértete en un usuario digital seguro!
             <div class="quiz">
                 <h3>Cuestionario:</h3>
                 <p>¿Cuál es el objetivo principal de este curso?</p>
@@ -63,22 +63,35 @@
         </div>
 
         <div id="module2" class="course-module" style="display: none;">
-            <h2><i class="fas fa-question-circle"></i> Módulo 2: ¿Qué es la ciberseguridad?</h2>
-            <p>La ciberseguridad es el conjunto de prácticas diseñadas para proteger redes, dispositivos, programas y datos de ataques, daños o accesos no autorizados. Es fundamental para proteger la información personal y profesional en el mundo digital. En este módulo, exploraremos los conceptos básicos de la ciberseguridad, incluyendo la importancia de mantener tus dispositivos y datos seguros.</p>
-            <div class="quiz">
-                <h3>Cuestionario:</h3>
-                <p>¿Qué es la ciberseguridad?</p>
-                <input type="radio" id="q2a1" name="q2" value="a">
-                <label for="q2a1">Un tipo de software</label><br>
-                <input type="radio" id="q2a2" name="q2" value="b">
-                <label for="q2a2">La práctica de proteger redes, dispositivos y datos</label><br>
-                <input type="radio" id="q2a3" name="q2" value="c">
-                <label for="q2a3">Un juego en línea</label><br>
-                <button class="submit-btn" onclick="checkAnswer('q2', 'b', 2)">Enviar</button>
-                <div id="feedback2" class="feedback-panel" style="display: none;"></div>
-                <button class="next-btn" id="next2" style="display: none;" onclick="navigateModule(3)">Siguiente</button>
-            </div>
-        </div>
+  <h2><i class="fas fa-question-circle"></i> Módulo 2: ¿Qué es la ciberseguridad?</h2>
+  <p>
+    La ciberseguridad es el conjunto de prácticas diseñadas para proteger redes, dispositivos, programas y datos de ataques, daños o accesos no autorizados. 
+    Es fundamental para proteger la información personal y profesional en el mundo digital. En este módulo, exploraremos los conceptos básicos de la ciberseguridad, 
+    incluyendo la importancia de mantener tus dispositivos y datos seguros.
+  </p>
+
+  <div style="text-align: center; margin: 20px 0;">
+    <video controls style="max-width: 100%; border-radius: 8px;">
+      <source src="../videos/ciberseguridad.mp4" type="video/mp4">
+      Tu navegador no puede reproducir este video.
+    </video>
+    <p style="font-size: 0.9rem; color: #555;">Video explicativo: Introducción a la ciberseguridad</p>
+  </div>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Qué es la ciberseguridad?</p>
+    <input type="radio" id="q2a1" name="q2" value="a">
+    <label for="q2a1">Un tipo de software</label><br>
+    <input type="radio" id="q2a2" name="q2" value="b">
+    <label for="q2a2">La práctica de proteger redes, dispositivos y datos</label><br>
+    <input type="radio" id="q2a3" name="q2" value="c">
+    <label for="q2a3">Un juego en línea</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q2', 'b', 2)">Enviar</button>
+    <div id="feedback2" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next2" style="display: none;" onclick="navigateModule(3)">Siguiente</button>
+  </div>
+</div>
 
         <div id="module3" class="course-module" style="display: none;">
              <h2><i class="fas fa-exclamation-triangle"></i> Módulo 3: Identifica fraudes comunes</h2>
@@ -156,30 +169,37 @@
 </div>
 
 <div id="module6" class="course-module" style="display: none;">
-    <h2><i class="fas fa-user-secret"></i> Módulo 6: Phishing (profundización)</h2>
-    <p>En este módulo, profundizaremos en cómo operan los ataques de phishing y qué técnicas utilizan los delincuentes para hacer que sus mensajes parezcan reales.</p>
-    <p>Los atacantes pueden:</p>
-    <ul style="text-align: left; max-width: 600px; margin: auto;">
-        <li>Clonar páginas web legítimas para que ingreses tus datos sin saber que es falso.</li>
-        <li>Usar logotipos y firmas reales de empresas conocidas para ganar tu confianza.</li>
-        <li>Manipular direcciones web (como www.paypa1.com en lugar de www.paypal.com).</li>
-        <li>Enviar archivos adjuntos con virus o programas espía.</li>
-    </ul>
-    <p><strong>Consejo:</strong> Si recibes un mensaje sospechoso, verifica siempre directamente con la empresa o persona a través de medios oficiales.</p>
+  <h2><i class="fas fa-user-secret"></i> Módulo 6: Phishing (profundización)</h2>
+  <p>En este módulo, profundizaremos en cómo operan los ataques de phishing y qué técnicas utilizan los delincuentes para hacer que sus mensajes parezcan reales.</p>
 
-    <div class="quiz">
-        <h3>Cuestionario:</h3>
-        <p>¿Cuál de las siguientes acciones te ayudará a evitar caer en un ataque de phishing?</p>
-        <input type="radio" id="q6a1" name="q6" value="a">
-        <label for="q6a1">Hacer clic rápidamente en cualquier enlace recibido</label><br>
-        <input type="radio" id="q6a2" name="q6" value="b">
-        <label for="q6a2">Verificar el enlace y contactar a la entidad desde su sitio oficial</label><br>
-        <input type="radio" id="q6a3" name="q6" value="c">
-        <label for="q6a3">Responder con tu contraseña para confirmar tu identidad</label><br>
-        <button class="submit-btn" onclick="checkAnswer('q6', 'b', 6)">Enviar</button>
-        <div id="feedback6" class="feedback-panel" style="display: none;"></div>
-        <button class="next-btn" id="next6" style="display: none;" onclick="navigateModule(7)">Siguiente</button>
-    </div>
+  <p>Los atacantes pueden:</p>
+  <ul style="text-align: left; max-width: 600px; margin: auto;">
+    <li>Clonar páginas web legítimas para que ingreses tus datos sin saber que es falso.</li>
+    <li>Usar logotipos y firmas reales de empresas conocidas para ganar tu confianza.</li>
+    <li>Manipular direcciones web (como www.paypa1.com en lugar de www.paypal.com).</li>
+    <li>Enviar archivos adjuntos con virus o programas espía.</li>
+  </ul>
+
+  <div style="text-align: center; margin: 20px 0;">
+    <img src="../imagenes/phishing.png" alt="Ejemplo avanzado de phishing" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);" />
+    <p style="font-size: 0.9rem; color: #555;">Ejemplo de mensaje que imita una entidad bancaria con enlace fraudulento.</p>
+  </div>
+
+  <p><strong>Consejo:</strong> Si recibes un mensaje sospechoso, verifica siempre directamente con la empresa o persona a través de medios oficiales.</p>
+
+  <div class="quiz">
+    <h3>Cuestionario:</h3>
+    <p>¿Cuál de las siguientes acciones te ayudará a evitar caer en un ataque de phishing?</p>
+    <input type="radio" id="q6a1" name="q6" value="a">
+    <label for="q6a1">Hacer clic rápidamente en cualquier enlace recibido</label><br>
+    <input type="radio" id="q6a2" name="q6" value="b">
+    <label for="q6a2">Verificar el enlace y contactar a la entidad desde su sitio oficial</label><br>
+    <input type="radio" id="q6a3" name="q6" value="c">
+    <label for="q6a3">Responder con tu contraseña para confirmar tu identidad</label><br>
+    <button class="submit-btn" onclick="checkAnswer('q6', 'b', 6)">Enviar</button>
+    <div id="feedback6" class="feedback-panel" style="display: none;"></div>
+    <button class="next-btn" id="next6" style="display: none;" onclick="navigateModule(7)">Siguiente</button>
+  </div>
 </div>
 
 <div id="module7" class="course-module" style="display: none;">
@@ -313,7 +333,7 @@
 
 <div id="module12" class="course-module" style="display: none;">
     <h2><i class="fas fa-trophy"></i> Módulo 12: ¡Felicidades!</h2>
-    <p>🎉 ¡Has completado el curso de ciberseguridad! Ahora tienes los conocimientos esenciales para proteger tu identidad, tus dispositivos y tu información en el mundo digital.</p>
+    <p> ¡Has completado el curso de ciberseguridad! Ahora tienes los conocimientos esenciales para proteger tu identidad, tus dispositivos y tu información en el mundo digital.</p>
 
     <ul style="text-align: left; max-width: 600px; margin: auto;">
         <li>Reconoces fraudes y amenazas comunes.</li>
@@ -322,8 +342,23 @@
         <li>Conoces el impacto ambiental de la tecnología.</li>
     </ul>
 
-    <p style="margin-top: 20px;">¡Gracias por participar y recuerda aplicar lo aprendido todos los días! 🚀</p>
+  <p style="margin-top: 20px;">
+      Como agradecimiento, te ofrecemos un <strong>30% de descuento</strong> en cualquiera de nuestros cursos premium.
+  </p>
 
+  <div style="margin-top: 20px;">
+    <a href="../resgistro/registro.php">
+      <img src="../imagenes/30.jpg" alt="30% de descuento" style="max-width: 300px; width: 100%; border-radius: 8px;" />
+    </a>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <a href="../resgistro/registro.php">
+      <button style="padding: 12px 24px; background-color: #3dadff; color: white; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">
+        Registrarse ahora
+      </button>
+    </a>
+  </div>
 </div>
 
     <script src="Curso2.js"></script>

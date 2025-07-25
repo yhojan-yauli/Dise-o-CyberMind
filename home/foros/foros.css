@@ -48,15 +48,25 @@ header {
   text-decoration: underline;
 }
 
-#menu-toggle {
+#menu-toggle,
+#user-toggle {
   display: none;
 }
 
-.hamburger {
+.hamburger,
+.user-icon {
   display: none;
   font-size: 1.8em;
   cursor: pointer;
   color: #000;
+}
+
+.mobile-icons {
+  display: none;
+}
+
+.auth-mobile {
+  display: none;
 }
 
 .btn-login,
@@ -86,10 +96,6 @@ header {
 .btn-register:hover {
   background-color: #262626;
   border-color: #262626;
-}
-
-.auth-mobile {
-  display: none;
 }
 
 .full-background {
@@ -140,18 +146,22 @@ footer {
     position: relative;
   }
 
-  .hamburger {
-    display: block;
-    order: 3;
-    margin-left: 10px;
-  }
-
-  .auth-mobile {
+  .mobile-icons {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
     order: 2;
   }
 
+  .hamburger,
+  .user-icon {
+    display: block;
+    font-size: 1.6em;
+    cursor: pointer;
+  }
+
+  .auth-mobile,
   .navbar-nav {
     display: none;
     flex-direction: column;
@@ -166,7 +176,11 @@ footer {
     z-index: 10;
   }
 
-  #menu-toggle:checked + .hamburger + .auth-mobile + .navbar-nav {
+  #menu-toggle:checked ~ .mobile-icons + .auth-mobile + .navbar-nav {
+    display: flex;
+  }
+
+  #user-toggle:checked ~ .mobile-icons + .auth-mobile {
     display: flex;
   }
 

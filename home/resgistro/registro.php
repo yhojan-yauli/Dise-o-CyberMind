@@ -25,22 +25,57 @@
       </ul>
     </nav>
   </header>
+
   <main>
     <section>
       <h2>Registrarse</h2>
+
       <?php
       include("conexion_registro.php");
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
-          include("controlador_registro.php");
+        include("controlador_registro.php");
       }
       ?>
+
       <form action="registro.php" method="post">
-        <label for="new-username">Usuario:</label>
-        <input type="text" id="new-username" name="new-username" required>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="input-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <label for="dni">DNI / Cédula:</label>
+            <input type="text" id="dni" name="dni" placeholder="Ej: 12345678, V-12345678, ABC123456" required>
+          </div>
+          <div class="input-group">
+            <label for="pais">País:</label>
+            <select id="pais" name="pais" required>
+              <option value="">Selecciona un país</option>
+              <option value="Perú">Perú</option>
+              <option value="México">México</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Chile">Chile</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+        </div>
+
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-        <label for="new-password">Contraseña:</label>
 
+        <label for="new-password">Contraseña:</label>
         <div class="password-input-container">
           <input type="password" id="new-password" name="new-password" required>
           <i class="fas fa-eye toggle-password" id="togglePassword"></i>
@@ -52,7 +87,6 @@
           <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
         </div>
 
-        
         <div class="form-buttons">
           <button type="button" onclick="window.location.href='../login/login.php'">Iniciar Sesión</button>
           <button type="submit" name="btn-register">Registrarse</button>
@@ -60,9 +94,9 @@
       </form>
     </section>
   </main>
+
   <script src="/js/script.js"></script>
   <script src="./registro.js"></script>
-
   <script>
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#new-password');

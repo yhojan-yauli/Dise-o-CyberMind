@@ -167,11 +167,11 @@ function getCorrectAnswer(questionName) {
     const answers = {
         q1: 'b',
         q2: 'b',
-        q3: 'b',
+        q3: 'c',
         q4: 'c',
         q5: 'b',
         q6: 'b',
-        q7: 'c',
+        q7: 'b',
         q8: 'b',
         q9: 'b',
         q10: 'b',
