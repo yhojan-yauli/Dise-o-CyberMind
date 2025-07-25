@@ -7,7 +7,7 @@ if(!empty($_POST["btn-login"]) )
         $clave = $_POST["pass"];
         $sql=$conexion->query("SELECT * FROM usuarios WHERE email='$usuario' AND password='$clave'");
         if($datos=$sql->fetch_object()) {
-            header("Location:HomeLogueado.html");
+            header("Location:HomeLogueado/HomeLogueado.html");
         } else {
                 echo '<div class="alert-danger red">Acceso denegado.</div>';
         }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cursos Premium</title>
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="./cursos-premium.css" />
+  <script src="https://kit.fontawesome.com/18d320874d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="/">Cyber Mind</a>
+      </div>
+
+<input type="checkbox" id="user-toggle" />
+<input type="checkbox" id="menu-toggle" />
+
+<div class="mobile-icons">
+  <label for="user-toggle" class="user-icon"><i class="fas fa-user"></i></label>
+  <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+</div>
+
+<div class="auth-mobile">
+  <a class="btn-login" href="../login/login.php">Iniciar Sesión</a>
+  <a class="btn-register" href="../resgistro/registro.php">Registrarse</a>
+</div>
+
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="../HomeLogueado.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="../cursosPremium2/cursos-premium.html">Cursos Premium</a></li>
+        <li class="nav-item"><a class="nav-link" href="../foros/foros.html">Foros</a></li>
+    </nav>
+  </header>
+
+<main class="full-background">
+        <section>
+            <h1>Cursos de Ciberseguridad</h1>
+            <div class="courses-container">
+                <div class="course">
+                    <img src="../../../img_ cursos_Premium/Introduccion a la ciberseguridad.jpg" alt="Introducción a la Ciberseguridad">
+                    <h2>Introducción a la Ciberseguridad</h2>
+                    <p>Aprende los conceptos básicos de la ciberseguridad, incluyendo la protección de sistemas y redes, y cómo identificar y mitigar amenazas comunes.</p>
+                    <p><strong>Certificación:</strong> Certificado de Introducción a la Ciberseguridad</p>
+                    <button class="buy-button" onclick="comprarCurso('Introducción a la Ciberseguridad')">Comprar Curso a  $. 89</button>
+                </div>
+                <div class="course">
+                    <img src="../../../img_ cursos_Premium/seguridad en la red.jpg" alt="Seguridad en Redes">
+                    <h2>Seguridad en Redes</h2>
+                    <p>Este curso cubre los principios de seguridad en redes, incluyendo firewalls, VPNs, y técnicas de prevención de intrusiones.</p>
+                    <p><strong>Certificación:</strong> Certificado de Seguridad en Redes</p>
+                    <button class="buy-button" onclick="comprarCurso('Seguridad en Redes')">Comprar Curso a  $. 89</button>
+                </div>
+                <div class="course">
+                    <img src="../../../img_ cursos_Premium/Hacking Etico.jpg" alt="Hacking Ético">
+                    <h2>Hacking Ético</h2>
+                    <p>Descubre las técnicas de hacking ético, incluyendo pruebas de penetración y evaluación de vulnerabilidades para mejorar la seguridad.</p>
+                    <p><strong>Certificación:</strong> Certificado de Hacking Ético</p>
+                    <button class="buy-button" onclick="comprarCurso('Hacking Ético')">Comprar Curso a  $. 89</button>
+                </div>
+                <div class="course">
+                    <img src="../../../img_ cursos_Premium/Seguridad de la Información" alt="Seguridad de la Información">
+                    <h2>Seguridad de la Información</h2>
+                    <p>Un curso completo sobre cómo proteger la información y los datos sensibles en una organización, incluyendo políticas y procedimientos de seguridad.</p>
+                    <p><strong>Certificación:</strong> Certificado de Seguridad de la Información</p>
+                    <button class="buy-button" onclick="comprarCurso('Seguridad de la Información')">Comprar Curso a  $. 89</button>
+                </div>
+              
+            </div>
+        </section>
+    </main>
+
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
