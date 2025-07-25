@@ -172,8 +172,8 @@ function getCorrectAnswer(questionName) {
         q5: 'b',
         q6: 'b',
         q7: 'c',
-        q8: 'b',
-        q9: 'b',
+        q8: 'c',
+        q9: 'c',
         q10: 'b',
         q11: 'b'
     };
