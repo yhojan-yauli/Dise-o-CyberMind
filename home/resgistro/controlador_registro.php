@@ -1,9 +1,12 @@
 <?php
 if (isset($_POST["btn-register"])) {
-    if (empty($_POST["new-username"]) || empty($_POST["email"]) || empty($_POST["new-password"]) || empty($_POST["confirm-password"])) {
+    if (empty($_POST["nombre"]) || empty($_POST["apellido"]) || empty($_POST["dni"]) || empty($_POST["pais"]) || empty($_POST["email"]) || empty($_POST["new-password"]) || empty($_POST["confirm-password"])) {
         echo '<div class="alert alert-danger">Por favor, complete todos los campos.</div>';
     } else {
-        $usuario = $_POST["new-username"];
+        $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $dni = $_POST["dni"];
+        $pais = $_POST["pais"];
         $email = $_POST["email"];
         $clave = $_POST["new-password"];
         $confirmar_clave = $_POST["confirm-password"];
@@ -26,13 +29,13 @@ if (isset($_POST["btn-register"])) {
                     echo '<div class="alert alert-danger">El correo electrónico ya está registrado.</div>';
                 } else {
                     // Insertar el nuevo usuario si el correo no está registrado
-                    $sql_insert = "INSERT INTO usuarios (username, email, password) VALUES (?, ?, ?)";
+                    $sql_insert = "INSERT INTO usuarios (nombre, apellido, dni, pais, email, password) VALUES (?, ?, ?, ?, ?, ?)";
                     $stmt_insert = $conexion->prepare($sql_insert);
 
                     if ($stmt_insert === false) {
                         echo '<div class="alert alert-danger">Error en la preparación de la consulta: ' . $conexion->error . '</div>';
                     } else {
-                        $stmt_insert->bind_param("sss", $usuario, $email, $clave);
+                        $stmt_insert->bind_param("ssssss", $nombre, $apellido, $dni, $pais, $email, $clave);
 
                         if ($stmt_insert->execute()) {
                             echo '<div class="alert alert-success">Registro exitoso. Ahora puedes iniciar sesión.</div>';
